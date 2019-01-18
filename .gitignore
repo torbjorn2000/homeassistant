@@ -6,6 +6,8 @@ deps/
 tts
 node-red
 www
+zwcfg*.*
+pyozw.sqlite
 
 # Whitelist this 
 !.gitignore
