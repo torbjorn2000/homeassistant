@@ -1,0 +1,108 @@
+#Köksradio: scene.p1, scene.p3, scene.nostalgie
+Vardagsrum:
+  view: yes
+  # icon: mdi:sofa
+  entities:
+    - light.vardagsrum_mys
+    - light.vardagsrum
+    - media_player.vardagsrum
+    - media_player.tv_vardagsrum
+    - media_player.apple_tv
+    - remote.apple_tv
+    - zwave.telldus_plugin_2
+    - zwave.tkb_dimmer_1
+    - zwave.fibaro_wall_dimmer_vardagsrum
+    - sensor.vardagsrum_temperature
+    - sensor.vardagsrum_humidity
+    - sensor.vardagsrum_temp_batt
+#Vardagslampor:
+#  entities:
+#    - light.kraftlampan
+#    - light.soplampan
+#    - light.vardagsblomma
+#    - light.hanglamporna
+#    - light.fibaro_wall_dimmer_vardagsrum_taklampa
+#    - light.baslampan
+#    - light.plexihornan
+#    - light.vardagsfonstret
+#    - light.tvbanken
+#    - light.vardagsstjarnan
+#    - light.julgranen
+    
+Gästrum:
+  view: yes 
+#   icon: mdi:panda
+  entities:
+    - light.gastrum
+    - media_player.gastrum
+    - sensor.ringvagen_temperature
+    - sensor.gastrum_temperature
+    - sensor.gastrum_humidity
+    - sensor.gastrum_temp_batt
+#Gästrumslampor:
+#  entities:
+#    - light.gastbollen
+#    - light.gastbokhyllan
+#    - light.gastsoffan
+#    - light.gastfonstret
+#    - light.gaststjarnan # Gäststjärnan
+Kök:
+  view: yes
+  entities:
+    - group.kokslampor_alla
+    - media_player.kok
+    - sensor.tradfri_wireless_dimmer
+    - zwave.aeotec_zw090_zstick_gen5_eu
+    - sensor.kok_temperature
+    - sensor.kok_humidity
+    - sensor.kok_temp_batt
+    - sensor.garden_temperature
+    - sensor.vita_dimmern
+    - sensor.tradfri_wireless_dimmer
+Kökslampor alla:
+  entities:
+    - group.kokslampor
+    - light.koksblomman
+Kökslampor:
+  entities:
+    - light.koksbank
+    - light.skapslingan
+    - light.serveringsgang
+    - light.koksstjarnan
+    - light.kokslampa
+Hall:
+  view: yes
+  entities:
+    - group.hallampor_alla
+    - zwave.telldus_plugin_1
+    - sensor.softgreen_battery
+    - zwave.soft_green
+Hallampor alla:
+  entities:
+    - group.hallampor
+    - light.hallblomma
+Hallampor:
+  entities:
+    - light.hallbyran
+    #- switch.nexa_remote_22 # Taklampa
+
+Sovrumslampor:
+  - light.turbanen
+  - light.sanglamporna
+  - light.balkongen # Balkongen
+Sovrum:
+  view: yes
+  entities:
+    - group.sovrumslampor
+    - media_player.sovrum
+    - sensor.perryberry_battery
+    - zwave.perry_berry
+    - sensor.sovrum_temperature
+    - sensor.sovrum_humidity
+    - sensor.sovrum_temp_batt
+zigbee_group:
+  name: Zigbee
+  entities:
+    - input_boolean.zigbee_permit_join
+    - timer.zigbee_permit_join
+    - sensor.bridge_state

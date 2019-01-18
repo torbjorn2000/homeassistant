@@ -1,0 +1,16 @@
+# Ignore everything
+.*
+*.log
+*Log*
+deps/
+tts
+node-red
+www
+
+# Whitelist this 
+!.gitignore
+
+# Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml

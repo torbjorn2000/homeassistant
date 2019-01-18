@@ -1,0 +1,116 @@
+- name: Cozy dozy
+  entities:
+    light.vardagsrum_mys:
+      state: on
+      brightness: 160
+    light.fibaro_wall_dimmer_vardagsrum_taklampa:
+      state: on
+      brightness: 30
+    input_boolean.myslampor_vardagsrum : on # Krävs så länge myslampor slås på från HASS och inte node. Node lyssnar på denna.
+    light.gastrum:
+      state: on
+      brightness: 80
+      color_temp: 370
+    light.hallbyran: on
+    light.serveringsgang:
+      state: on
+      brightness: 170
+      color_temp: 370
+    light.kokslampa:
+      state: on
+      brightness: 48
+      color_temp: 370
+    light.koksbank: 
+      state: on
+      brightness_pct: 80
+    light.skapslingan: on
+    light.koksstjarnan: on # Köksstjärnan
+    group.sovrumslampor: on
+    
+- name: Myslampor vardagsrum
+  entities:
+    light.vardagsrum_mys:
+      state: on
+      brightness: 160
+#    light.fibaro_wall_dimmer_vardagsrum_taklampa:
+#        state: on
+#        brightness: 30
+    #light.vardagsstjarnan: on # Vardagsstjärnan
+    input_boolean.myslampor_vardagsrum : on # Krävs så länge myslampor slås på från HASS och inte node. Node lyssnar på denna.
+
+- name: Cleaning
+  entities:
+    group.all_lights:
+      state: on
+      brightness_pct: 100
+    group.all_switches: on
+    input_boolean.myslampor_vardagsrum : on
+
+- name: TV mode
+  entities:
+#    light.vardagsrum_mys_dimbara:
+#      state: on
+#      brightness: 90
+    light.hanglamporna: off
+#   light.fibaro_wall_dimmer_vardagsrum_taklampa: off
+
+- name: Movie mode
+  entities:
+    light.vardagsrum_mys:
+      state: on
+      brightness: 90
+    light.hanglamporna: off
+    light.fibaro_wall_dimmer_vardagsrum_taklampa: off
+
+- name: Flower lamps away
+  entities:
+    light.hallblomma:
+      state: on
+      brightness: 255
+    light.koksblomman:
+      state: on
+      brightness: 255
+
+- name: Flower lamps home
+  entities:
+    light.hallblomma:
+      state: on
+      brightness: 145
+    light.koksblomman:
+      state: on
+      brightness: 178
+  
+- name: Darkness
+  entities:
+    light.vardagsrum: off
+    light.gastrum: off
+    group.hallampor: off
+    group.sovrumslampor: off
+    group.kokslampor: off
+    input_boolean.myslampor_vardagsrum : off
+
+- name: Per's morning
+  entities:
+    light.vardagsrum_mys:
+      state: on
+      brightness: 160
+    light.fibaro_wall_dimmer_vardagsrum_taklampa:
+      state: on
+      brightness: 30
+    input_boolean.myslampor_vardagsrum : on # Krävs så länge myslampor slås på från HASS och inte node. Node lyssnar på denna.
+    light.gastrum:
+      state: on
+      brightness: 80
+      color_temp: 370
+    light.hallbyran: on
+    light.balkongen: on 
+    light.serveringsgang:
+      state: on
+      brightness: 170
+      color_temp: 370
+    light.koksbank: 
+      state: on
+      brightness_pct: 70
+    light.skapslingan: on
+    light.koksstjarnan: on
+    group.sovrumslampor: off

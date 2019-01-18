@@ -1,0 +1,89 @@
+alexa:
+  entity_config:
+
+    #Sovrum
+    light.sanglamporna:
+      name: "Bed lamps"
+    light.turbanen:
+      name: "Turban"
+
+    # Vardagsrum
+    light.kraftlampan:
+      name: "Cray fish lamp"
+    light.hanglamporna:
+      name: "Hanging lamps"
+    light.tvbanken:
+      name: "TV lamp"
+    light.plexihornan:
+      name: "Plexi corner"
+    light.soplampan:
+      name: "Garbage lamp"
+    light.vardagsblomma:
+      name: "Living room flower lamp"
+    light.fibaro_wall_dimmer_vardagsrum_taklampa:
+      name: "Living room ceiling light"
+    light.baslampan:
+      name: "Base lamp"    
+    light.vardagsfonstret:
+      name: Living room window
+    light.julgranen:
+      name: Christmas tree
+    media_player.tv_vardagsrum:
+      name: TV
+      display_categories: 'TV'
+
+    # Gästrum
+    light.gastfonstret:
+      name: "Guest window"
+    light.gastbollen:
+      name: "Guest ball"
+    light.gastsoffan:
+      name: Guest sofa
+    light.gastbokhyllan:
+      name: Book shelf
+
+    # Kök
+    light.koksstjarnan:
+      name: "Kitchen star"
+    light.koksbank:
+      name: "Sink lamp"
+    light.skapslingan:
+      name: "Kitchen sling"
+    light.koksblomman:
+      name: "Kitchen flower"
+    light.kokslampa:
+      name: "Kitchen ceiling lamp"
+    light.serveringsgang:
+      name: "Butler lamp"
+
+    # Hall
+    light.hallbyran:
+      name: "Granny lamp"
+    light.hallblomma:
+      name: "Hallway flower lamp"
+
+    # Misc
+    light.balkongen:
+      name: "Balcony"
+
+  filter:
+    include_domains:
+      - light
+    include_entities:
+      - media_player.tv_vardagsrum
+      - script.shut_down_media
+      - script.lights_away
+      - script.cozy_dozy
+      - script.pers_morning
+      - script.p1_vardagsrummet
+      - scene.darkness
+      - scene.tv_mode
+      - scene.movie_mode
+    exclude_domains:
+      - script
+      - media_player
+      - scene
+      - switch
+    exclude_entities:
+      - light.vardagsrum_mys_dimbara
+      - light.fibaro_wall_dimmer_vardagsrum_myslampor

@@ -1,0 +1,96 @@
+media_player.gastrum:
+  friendly_name: Gästrum (Sonos)
+  icon: mdi:speaker-wireless
+media_player.vardagsrum:
+  friendly_name: Vardagsrum (Sonos)
+  icon: mdi:surround-sound
+media_player.kok:
+  friendly_name: Kök (Sonos)
+  icon: mdi:speaker-wireless
+media_player.sovrum:
+  friendly_name: Sovrum (Sonos)
+  icon: mdi:speaker-wireless
+#media_player.gast_och_vardagsrum:
+#  hidden: true
+#binary_sensor.brandvarnare_sensor_status:
+#  icon: mdi:fire
+#  friendly_name: Brand
+sensor.gastrum_temperature:
+  friendly_name: Gästrum
+sensor.gastrum_humidity:
+  friendly_name: Fukt
+  icon: mdi:water
+sensor.ringvagen_temperature:
+  friendly_name: Ringvägen
+sensor.sovrum_temperature:
+  friendly_name: Sovrum
+sensor.sovrum_humidity:
+  friendly_name: Fukt
+  icon: mdi:water
+sensor.garden_temperature:
+  friendly_name: Gården
+sensor.kok_temperature:
+  friendly_name: Kök
+sensor.kok_humidity:
+  friendly_name: Fukt
+  icon: mdi:water
+sensor.vardagsrum_temperature:
+  friendly_name: Vardagsrum
+sensor.vardagsrum_humidity:
+  friendly_name: Fukt
+  icon: mdi:water
+media_player.tv_vardagsrum:
+  friendly_name: TV
+sensor.08500705de00004069_temperature:
+  hidden: true
+sensor.08500704de00006169_temperature:
+  hidden: true
+sensor.08500705de00003f69_temperature:
+  hidden: true
+sensor.08500702de00004569_temperature:
+  hidden: true
+sensor.08500705de00004569_temperature:
+  hidden: true
+sensor.log_db_file_size:
+  friendly_name: Log Db
+  icon: mdi:database
+sensor.vita_dimmern:
+  icon: mdi:remote
+sensor.gula_dimmern:
+  icon: mdi:remote
+light.fibaro_wall_dimmer_vardagsrum_myslampor:
+  hidden: true
+sensor.fibaro_wall_dimmer_vardagsrum_alarm_level:
+  hidden: true
+sensor.fibaro_wall_dimmer_vardagsrum_alarm_type:
+  hidden: true
+sensor.fibaro_wall_dimmer_vardagsrum_exporting:
+  hidden: true
+sensor.fibaro_wall_dimmer_vardagsrum_heat:
+  hidden: true
+sensor.fibaro_wall_dimmer_vardagsrum_power_management:
+  hidden: true
+sensor.fibaro_wall_dimmer_vardagsrum_sourcenodeid:
+  hidden: true
+sensor.fibaro_wall_dimmer_vardagsrum_system:
+  hidden: true
+sensor.fibaro_wall_dimmer_vardagsrum_energy:
+  hidden: true
+sensor.fibaro_wall_dimmer_vardagsrum_power:
+  hidden: true
+sensor.linksys44108_bytes_received:
+  hidden: true
+sensor.linksys44108_bytes_sent:
+  hidden: true
+#sensor.linksys44108_kbyte_sec_received:
+#  hidden: true
+#sensor.linksys44108_kbyte_sec_sent:
+#  hidden: true
+sensor.linksys44108_packets_received:
+  hidden: true
+sensor.linksys44108_packets_sec_received:
+  hidden: true
+sensor.linksys44108_packets_sec_sent:
+  hidden: true
+sensor.linksys44108_packets_sent:
+  hidden: true

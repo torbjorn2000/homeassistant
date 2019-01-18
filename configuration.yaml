@@ -1,0 +1,506 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Hemma
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret home_lat
+  longitude: !secret home_long
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 11
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Stockholm
+  customize: !include customize.yaml
+  customize_glob:
+    "sensor.dark_sky*":
+      hidden: true
+    "sensor.yr*":
+      hidden: true
+    "switch.*":
+      hidden: true
+      assumed_state: false
+    "automation.*":
+      hidden: true
+    "script.*":
+      hidden: true
+
+zone:
+  - name: Home
+    latitude: !secret home_lat
+    longitude: !secret home_long
+    radius: 100
+    icon: mdi:home
+    
+  - name: Work
+    latitude: !secret work_lat
+    longitude: !secret work_long
+    radius: 100
+    icon: mdi:worker
+
+# Enables the frontend
+frontend:
+  javascript_version: latest
+  themes: !include_dir_merge_named themes/
+
+lovelace:
+  mode: yaml
+
+# Update custom cards in lovelace
+# https://github.com/custom-components/custom_updater
+custom_updater:
+  hide_sensor: true
+  track:
+    - cards
+    - components
+    - python_scripts
+  card_urls: 
+    - https://raw.githubusercontent.com/kuuji/button-card/master/tracker.json
+    - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
+
+panel_iframe:
+  nodered:
+    title: 'Node-RED'
+    icon: mdi:shuffle-variant
+    url: http://hassio3.local:1880
+
+panel_custom:
+  - name: zwavegraph2
+    sidebar_title: ZWave Graph
+    sidebar_icon: mdi:access-point-network
+    url_path: zwave
+
+# Enables configuration UI
+config:
+
+http:
+  api_password: !secret http_password
+#  server_port: 8123 # Default
+#  trusted_networks:
+#    - 127.0.0.1
+#    - 192.168.0.0/255
+#  base_url: https://hass.perbjorn.com
+#  ssl_certificate: /ssl/fullchain.pem
+#  ssl_key: /ssl/privkey.pem
+  
+
+# Discover some devices automatically
+discovery:
+  ignore:
+    - apple_tv
+    - logitech_mediaserver
+    - plex_mediaserver
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+# conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+recorder:
+  purge_keep_days: 14
+  db_url: !secret maria_db_log
+
+logger:
+  default: debug
+  logs:
+    homeassistant.components.rfxtrx: info
+    homeassistant.components.darksky: error
+    homeassistant.components.discovery: error
+    homeassistant.components.http.view: error
+    homeassistant.components.device_tracker.linksys_smart: warn
+    homeassistant.components.websocket_api.http.connection: info
+    libopenzwave: info
+    pyhap.accessory_driver: info
+    pyhap.characteristic: info
+    pyhap.hap_server: error
+
+# Track the sun
+# sun:
+
+# Weather prediction
+sensor:
+#  - platform: yr
+#    monitored_conditions:
+#      - temperature
+#      - symbol
+#  - platform: darksky
+#    api_key: !secret darksky
+#    monitored_conditions:
+#      - temperature
+#      - humidity
+#      - precip_probability
+#      - precip_intensity
+#      - wind_speed
+#      - pressure
+#      - wind_bearing
+#      - apparent_temperature
+#      - icon
+  - platform: rfxtrx                                                        
+    automatic_add: false 
+    devices:
+      0a520902a70000f2260279:
+        name: Gästrum
+        data_type:
+          - Humidity
+          - Temperature
+      08500700a800001379:
+        name: Ringvägen
+      0a520902870000ed140279:
+        name: Kök
+        data_type:
+          - Humidity
+          - Temperature
+      08500701880000ec79:
+        name: Gården
+      0a520905970000e3140279:
+        name: Sovrum
+        data_type:
+          - Humidity
+          - Temperature
+      0a520915b70000e2140269:
+        name: Vardagsrum
+        data_type:
+          - Humidity
+          - Temperature
+
+  - platform: template
+    sensors:
+      gastrum_temp_batt:
+        friendly_name: "Gästrum tempbatteri"
+        unit_of_measurement: '%'
+        entity_id:
+          - sensor.gastrum_temperature
+        value_template: "{{ states.sensor.ringvagen_temperature.attributes['Battery numeric']*10 }}"
+      sovrum_temp_batt:
+        friendly_name: "Sovrum tempbatteri"
+        unit_of_measurement: '%'
+        entity_id:
+          - sensor.sovrum_temperature
+        value_template: "{{ states.sensor.sovrum_temperature.attributes['Battery numeric']*10 }}"
+      kok_temp_batt:
+        friendly_name: "Kök tempbatteri"
+        unit_of_measurement: '%'
+        entity_id:
+          - sensor.kok_temperature
+        value_template: "{{ states.sensor.kok_temperature.attributes['Battery numeric']*10 }}"
+      vardagsrum_temp_batt:
+        friendly_name: "Vardagsrum tempbatteri"
+        unit_of_measurement: '%'
+        entity_id:
+          - sensor.vardagsrum_temperature
+        value_template: "{{ states.sensor.vardagsrum_temperature.attributes['Battery numeric']*10 }}"
+      perryberry_battery:
+        friendly_name: "Perry Berry"
+        unit_of_measurement: '%'
+        entity_id:
+          - zwave.perry_berry
+        value_template: "{{ states.zwave.perry_berry.attributes['battery_level']}}"
+      softgreen_battery:
+        friendly_name: "Soft Green"
+        unit_of_measurement: '%'
+        entity_id:
+          - zwave.soft_green
+        value_template: "{{ states.zwave.soft_green.attributes['battery_level']}}"
+#      weather_aggregation:
+#        friendly_name: "Väder"
+#        value_template: "{{ states.sensor.yr_temperature.state }}"
+#        entity_picture_template: "{{ states.sensor.yr_symbol.attributes['entity_picture']}}"
+#        unit_of_measurement: '°C'
+#        entity_id:
+#          - sensor.yr_temperature
+#          - sensor.yr_symbol
+
+  - platform: mqtt
+    name: Bridge state
+    state_topic: "zigbee2mqtt/bridge/state"
+    icon: mdi:router-wireless
+          
+  - platform: command_line
+    name: log_file_size
+    command: "du -m /config/home-assistant.log | cut -f1"
+    unit_of_measurement: 'MB'
+    value_template: '{{ value | int - 1 }}'
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: "/"
+      - type: memory_use_percent
+      - type: processor_use
+  - platform: speedtest
+    minute: 30
+    hour:
+      - 0
+    monitored_conditions:
+      - ping
+      - download
+      - upload
+
+binary_sensor:
+  platform: rfxtrx
+  devices:
+    082003052f15000670:
+      name: Brand
+      fire_event: true 
+      device_class: smoke
+      off_delay:
+        minutes: 5
+
+light:
+  - platform: group
+    name: Vardagsrum mys
+    entities:
+      - light.kraftlampan
+      - light.soplampan
+      - light.vardagsblomma
+      - light.hanglamporna
+      - light.baslampan
+      - light.vardagsfonstret
+      - light.plexihornan
+      - light.tvbanken
+  - platform: group
+    name: Vardagsrum
+    entities:
+      - light.vardagsrum_mys
+      - light.fibaro_wall_dimmer_vardagsrum_taklampa
+  - platform: group
+    name: Gästrum
+    entities:
+      - light.gastbollen
+      - light.gastbokhyllan
+      - light.gastsoffan
+      - light.gastfonstret # På skänken...
+      - light.gaststjarnan # Lilla bollen...
+  - platform: switch
+    name: Vardagsstjärnan
+    entity_id: switch.nexa_remote_31
+  - platform: switch
+    name: Gäststjärnan
+    entity_id: switch.nexa_remote_22
+  - platform: switch
+    name: Köksstjärnan
+    entity_id: switch.nexa_remote_23
+  - platform: switch
+    name: Hallbyrån
+    entity_id: switch.telldus_plugin_switch_1
+  - platform: switch
+    name: TV-Bänken
+    entity_id: switch.telldus_plugin_switch_2
+  - platform: switch
+    name: Gästbokhyllan
+    entity_id: switch.gastbokhyllan
+  - platform: switch
+    name: Gästsoffan
+    entity_id: switch.gastsoffan
+  - platform: switch
+    name: Skåpslingan
+    entity_id: switch.skapslingan
+  - platform: switch
+    name: Turbanen
+    entity_id: switch.turbanen    
+  - platform: switch
+    name: Sänglamporna
+    entity_id: switch.sanglamporna    
+  - platform: switch
+    name: Balkongen
+    entity_id: switch.nexa_sovrum_3    
+  - platform: switch
+    name: Julgranen
+    entity_id: switch.nexa_vrum_2
+
+switch:
+  - platform: rfxtrx
+    automatic_add: true
+    devices:
+      #################################
+      # Liten nexafjärr märkt "Gästrum"
+      #################################
+      0b11004d00aca2fe01010f70:
+        name: nexa_gastrum_1
+        fire_event: true
+      
+      #################################
+      # Liten nexafjärr märkt "Kök"
+      #################################
+      0b11003c00b73f2e01000070:
+        name: nexa_kok_1
+        fire_event: true
+      0b11004000b73f2e02010f70:
+        name: nexa_kok_2
+        fire_event: true
+      0b11000500b73f2e03000070:
+        name: nexa_kok_3
+        fire_event: true
+
+      ####################################
+      # Inbyggda nexasändaren i köket
+      ####################################
+      0b110002016093ea02010f60:
+        # name: Diskbänk
+        name: Kitchen wall remote
+
+      ####################################
+      # Den vita fjärrkontrollen, läge IV
+      ####################################
+      0b11002c00a7d9920d010f70:
+        name: nexa_remote_41
+      
+      ####################################
+      # Lilla vit i sovrummet
+      ####################################
+      0b11000000e63cd601000070:
+        name: Sänglamporna
+      0b11000200e63cd602000070:
+        name: Turbanen
+      0b11000600e63cd603010f60: # Balkong
+        name: nexa_sovrum_3
+        fire_event: true
+
+      ####################################
+      # Den vita fjärrkontrollen, läge I
+      ####################################
+      0b11000300a7d99201030070:
+        name: nexa_remote_11
+        fire_event: true
+      0b11009300a7d99202010f70:
+        name: nexa_remote_12
+        fire_event: true
+      0b11009400a7d99203010f70:
+        name: nexa_remote_13
+        fire_event: true
+      0b11000400a7d99204010f70:
+        name: nexa_remote_14
+        fire_event: true
+      ####################################
+      # Den vita fjärrkontrollen, läge II
+      ####################################
+      0b11001400a7d99205010f70:
+        name: nexa_remote_21 # Gäststjärnan
+        fire_event: true
+      0b11001500a7d99206010f70:
+        name: nexa_remote_22 # Taklampa hall.
+        fire_event: true
+      0b11001600a7d99207010f70:
+        name: nexa_remote_23  # Köksstjärna
+        fire_event: true
+      # 0b11000d00a7d99208000060:
+      #   name: nexa_remote_24 # Balkongen
+      #   fire_event: true
+
+      ####################################
+      # Den vita fjärrkontrollen, läge II
+      ####################################
+      0b11002800a7d99209010f60:
+        name: nexa_remote_31  # Vardagsstjärnan
+        fire_event: true
+      ####################################
+      # Lilla vita, vrum, i ordning
+      ####################################
+#      0b1100030080832e01010f60:
+#        name: Plexihörnan
+#        fire_event: true
+      0b11008b0080832e02010f70:
+        name: nexa_vrum_2
+#     0b1100020080832e03010f70:
+#       name: Fönsterlampa
+      
+media_player:
+  - platform: sonos
+  - platform: samsungtv
+    host: 192.168.0.20
+    mac: "78:ab:bb:67:3a:27"
+    name: TV Vardagsrum
+
+# Text to speech
+tts:
+  - platform: google
+    language: 'sv'
+
+notify:
+  - name: pushbullet
+    platform: pushbullet
+    api_key: !secret pushbullet
+
+zwave:
+  usb_path: /dev/ttyACM1
+
+rfxtrx:                
+  device: /dev/ttyUSB1
+  debug: false
+
+group: !include groups.yaml
+automation: !include_dir_merge_list automations/
+scene: !include scenes.yaml
+script: !include scripts.yaml
+
+device_tracker:
+  - platform: linksys_smart
+    host: 192.168.0.1
+    track_new_devices: false
+
+tradfri:
+  host: 192.168.0.39
+  allow_tradfri_groups: false
+
+homekit:
+  auto_start: false # Needed for zwave to wake up
+  filter:
+    exclude_domains:
+      - automation
+      - script
+      - input_boolean
+      - switch
+      - scene
+      - device_tracker
+      - media_player
+    exclude_entities:
+      - sensor.weather_aggregation
+      - sensor.ringvagen_temperature
+      - light.fibaro_wall_dimmer_vardagsrum_myslampor
+      - light.vardagsrum_mys
+      - light.vardagsrum
+      - light.gastrum
+      - sensor.yr_symbol
+      - sensor.yr_temperature
+      - binary_sensor.brand
+#  entity_config:
+#    media_player.vardagsrum:
+#      feature_list:
+#        - feature: play_pause
+#        - feature: toggle_mute
+#    media_player.koket:
+#      feature_list:
+#        - feature: play_pause
+#        - feature: toggle_mute
+#    media_player.sovrum:
+#      feature_list:
+#        - feature: play_pause
+#        - feature: toggle_mute
+#    media_player.gastrum:
+#      feature_list:
+#        - feature: play_pause
+#        - feature: toggle_mute
+#    media_player.tv_vardagsrum:
+#      feature_list:
+#        - feature: play_pause
+#        - feature: toggle_mute
+
+cloud: !include alexa.yaml
+
+input_boolean:
+  myslampor_vardagsrum:
+  zigbee_permit_join:
+    name: Allow devices to join
+    initial: off
+    icon: mdi:cellphone-wireless
+
+#mqtt:
+#  broker: homeassistant # This will have to be your mqtt broker
+#  discovery: true
+
+timer:
+  zigbee_permit_join:
+    name: Time remaining
+    duration: 600 # Updated this to the number of seconds you wish

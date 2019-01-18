@@ -1,0 +1,103 @@
+#ights_away:
+# alias: "Lights when away"
+# sequence:
+#   - service: scene.turn_on
+#     entity_id: scene.darkness
+#   - condition: state
+#     entity_id: light.hallblomma
+#     state: 'on'
+#   - service: scene.turn_on
+#     entity_id: scene.flower_lamps_away
+
+cozy_dozy:
+  alias: "Cozy dozy"
+  sequence:
+    - service: scene.turn_on
+      entity_id: scene.cozy_dozy
+#    - service: scene.turn_on
+#      entity_id: scene.myslampor_vardagsrum
+    - condition: state
+      entity_id: light.hallblomma
+      state: 'on'
+    - service: scene.turn_on
+      entity_id: scene.flower_lamps_home
+
+#pers_morning:
+#  alias: "Per's morning"
+#  sequence:
+#    - service: scene.turn_on
+#      entity_id: scene.myslampor_vardagsrum
+#    - service: scene.turn_on
+#      entity_id: scene.pers_morning
+    
+leaving_home:
+  alias: "Leaving home"
+  sequence:
+    - service: media_player.turn_off
+      entity_id: 
+        - media_player.vardagsrum
+        - media_player.sovrum
+        - media_player.kok
+        - media_player.gastrum
+        - media_player.tv_vardagsrum
+    - service: scene.turn_on
+      entity_id: scene.darkness
+    - condition: state
+      entity_id: light.hallblomma
+      state: 'on'
+    - service: scene.turn_on
+      entity_id: scene.flower_lamps_away
+
+p1_vardagsrummet:
+  alias: "P1 in the living room"
+  sequence:
+    - service: script.sonos_play_source
+      data:
+        sonos_entity: 'media_player.vardagsrum'
+        source: 'P1'
+
+nostalgie_vardagsrummet:
+  alias: "Nostalgie in the living room"
+  sequence:
+    - service: script.sonos_play_source
+      data:
+        sonos_entity: 'media_player.vardagsrum'
+        source: 'Nostalgie'
+
+sonos_play_source:
+  alias: "Play on Sonos"
+  sequence:
+    - service: media_player.sonos_unjoin
+      data_template: 
+        entity_id: "{{ sonos_entity }}"
+    - service: media_player.select_source
+      data_template:
+        entity_id: "{{ sonos_entity }}"
+        source: "{{ source }}"
+    - service: media_player.volume_set
+      data_template:
+        entity_id: "{{ sonos_entity }}"
+        volume_level: '0.13'
+
+sonos_say:
+  alias: "Sonos say script"
+  sequence:
+   - service: media_player.sonos_snapshot
+     data_template:
+       entity_id: "{{ sonos_entity }}"
+   - service: media_player.sonos_unjoin
+     data_template:
+       entity_id: "{{ sonos_entity }}"
+   - service: media_player.volume_set
+     data_template:
+       entity_id: "{{ sonos_entity }}"
+       volume_level: "{{ volume }}"
+   - service: tts.google_say
+     data_template:
+       entity_id: "{{ sonos_entity }}"
+       message: "{{ message | random}}"
+   - delay: "{{ delay }}"
+   - service: media_player.sonos_restore
+     data_template:
+       entity_id: "{{ sonos_entity }}"
+#

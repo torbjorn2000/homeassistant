@@ -1,0 +1,44 @@
+
+# Start HomeKit when z-wave is ready, otherwise those devices will be disabled on restart
+- alias: 'Start HomeKit'
+  initial_state: 'on'
+  trigger:
+    - platform: event
+      event_type: zwave.network_ready
+    - platform: event
+      event_type: zwave.network_complete
+  action:
+    - service: homekit.start
+
+- alias: 'Set theme at startup'
+  initial_state: 'on'
+  trigger:
+   - platform: homeassistant
+     event: start
+  action:
+    service: frontend.set_theme
+    data:
+      name: dark_theme
+
+- id: system_backup_weekly
+  alias: 'System - Backup - Weekly'
+  initial_state: 'on'
+  trigger:
+    platform: time
+    at: '00:00:00'
+  condition:
+  - condition: time
+    weekday:
+      - mon
+  action:
+  - service: hassio.snapshot_full
+    data_template:
+      name: >
+        {{ now().strftime('%Y%m%d') }} Weekly Backup
+  - delay: '00:30'
+  - service: hassio.addon_stdin
+    data:
+      addon: "7be23ff5_dropbox_sync"
+      input:
+        command: "upload"
+        
