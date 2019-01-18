@@ -1,4 +1,3 @@
-# Ignore everything
 .*
 *.log
 *Log*
@@ -6,8 +5,8 @@ deps/
 tts
 node-red
 www
-zwcfg*.*
 pyozw.sqlite
+zwcfg*
 
 # Whitelist this 
 !.gitignore
