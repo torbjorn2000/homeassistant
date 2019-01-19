@@ -162,7 +162,7 @@ views:
           - light.hanglamporna
           - light.baslampan
           - light.vardagsfonstret
-          - light.tvbanken
+          - light.tv_banken
           - light.plexihornan
       - type: entities
         title: Temperatur

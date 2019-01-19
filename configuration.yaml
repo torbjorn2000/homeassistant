@@ -257,7 +257,7 @@ light:
       - light.baslampan
       - light.vardagsfonstret
       - light.plexihornan
-      - light.tvbanken
+      - light.tv_banken
   - platform: group
     name: Vardagsrum
     entities:
