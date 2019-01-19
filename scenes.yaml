@@ -11,21 +11,12 @@
       state: on
       brightness: 80
       color_temp: 370
-    light.hallbyran: on
-    light.serveringsgang:
-      state: on
-      brightness: 170
-      color_temp: 370
-    light.kokslampa:
-      state: on
-      brightness: 48
-      color_temp: 370
-    light.koksbank: 
+    light.hall: on
+    light.kok:
       state: on
       brightness_pct: 80
-    light.skapslingan: on
-    light.koksstjarnan: on # Köksstjärnan
-    group.sovrumslampor: on
+      color_temp: 370
+    light.sovrum: on
     
 - name: Myslampor vardagsrum
   entities:
@@ -43,7 +34,6 @@
     group.all_lights:
       state: on
       brightness_pct: 100
-    group.all_switches: on
     input_boolean.myslampor_vardagsrum : on
 
 - name: TV mode
@@ -84,9 +74,9 @@
   entities:
     light.vardagsrum: off
     light.gastrum: off
-    group.hallampor: off
-    group.sovrumslampor: off
-    group.kokslampor: off
+    light.hall: off
+    light.sovrum: off
+    light.kok: off
     input_boolean.myslampor_vardagsrum : off
 
 - name: Per's morning
@@ -102,15 +92,9 @@
       state: on
       brightness: 80
       color_temp: 370
-    light.hallbyran: on
+    light.hall: on
     light.balkongen: on 
-    light.serveringsgang:
+    light.kok:
       state: on
-      brightness: 170
+      brightness_pct: 80
       color_temp: 370
-    light.koksbank: 
-      state: on
-      brightness_pct: 70
-    light.skapslingan: on
-    light.koksstjarnan: on
-    group.sovrumslampor: off

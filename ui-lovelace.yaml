@@ -20,78 +20,97 @@ views:
     icon: mdi:laptop
     id: overview
     cards:
-      - type: horizontal-stack
+      - type: vertical-stack
         cards:
-          - type: "custom:button-card"
-            icon: mdi:heart
-            name: Myslampor
-            #color: red
-            #size: 100%
-            style:
-              - text-transform: none
-              - font-weight: bold
-            action: service
-            service:
-              domain: script
-              action: turn_on
-              data:
-                entity_id: script.cozy_dozy
-          - type: "custom:button-card"
-            icon: mdi:power-sleep
-            name: Släckt
-          #  size: 100%
-            style:
-              - text-transform: none
-              - font-weight: bold
-            action: service
-            service:
-              domain: scene
-              action: turn_on
-              data:
-                entity_id: scene.darkness
-      - type: horizontal-stack
-        cards:
-          - type: "custom:button-card"
-            icon: mdi:coffee
-            name: Pers morgon
-            #size: 100%
-            style:
-              - text-transform: none
-              - font-weight: bold
-            action: service
-            service:
-              domain: scrit
-              action: turn_on
-              data:
-                entity_id: script.pers_morning
-          - type: "custom:button-card"
-            icon: mdi:broom
-            name: Städ
-          #  size: 100%
-            style:
-              - text-transform: none
-              - font-weight: bold
-            action: service
-            service:
-              domain: scene
-              action: turn_on
-              data:
-                entity_id: scene.cleaning
-          - type: "custom:button-card"
-            icon: mdi:door
-            name: Hej då
-            #size: 100%
-            style:
-              - text-transform: none
-              - font-weight: bold
-            action: service
-            service:
-              domain: script
-              action: turn_on
-              data:
-                entity_id: script.leaving_home
+        - type: horizontal-stack
+          cards:
+            - type: "custom:button-card"
+              icon: mdi:heart
+              name: Myslampor
+              #color: red
+              #size: 100%
+              style:
+                - text-transform: none
+                - font-weight: bold
+              action: service
+              service:
+                domain: script
+                action: turn_on
+                data:
+                  entity_id: script.cozy_dozy
+            - type: "custom:button-card"
+              icon: mdi:power-sleep
+              name: Släckt
+            #  size: 100%
+              style:
+                - text-transform: none
+                - font-weight: bold
+              action: service
+              service:
+                domain: scene
+                action: turn_on
+                data:
+                  entity_id: scene.darkness
+        - type: horizontal-stack
+          cards:
+            - type: "custom:button-card"
+              icon: mdi:coffee
+              name: Pers morgon
+              #size: 100%
+              style:
+                - text-transform: none
+                - font-weight: bold
+              action: service
+              service:
+                domain: scrit
+                action: turn_on
+                data:
+                  entity_id: script.pers_morning
+            - type: "custom:button-card"
+              icon: mdi:broom
+              name: Städ
+            #  size: 100%
+              style:
+                - text-transform: none
+                - font-weight: bold
+              action: service
+              service:
+                domain: scene
+                action: turn_on
+                data:
+                  entity_id: scene.cleaning
+            - type: "custom:button-card"
+              icon: mdi:door
+              name: Hej då
+              #size: 100%
+              style:
+                - text-transform: none
+                - font-weight: bold
+              action: service
+              service:
+                domain: script
+                action: turn_on
+                data:
+                  entity_id: script.leaving_home
+        - type: horizontal-stack
+          cards:
+          - type: light
+            entity: light.vardagsrum
+          - type: light
+            entity: light.gastrum
+        - type: horizontal-stack
+          cards:
+          - type: light
+            entity: light.sovrum
+          - type: light
+            entity: light.kok
+        - type: horizontal-stack
+          cards:
+          - type: light
+            entity: light.hall
       - type: entities
         title: Sonosar
+        show_header_toggle: false
         entities:
         - entity: media_player.kok
           type: "custom:mini-media-player"
@@ -117,14 +136,18 @@ views:
           show_source: true
           name: Vardagsrum
           hide_power: true
-      - type: glance
-        column_width: 20%
-        entities:
-          - entity: sensor.weather_aggregation
-          - entity: sensor.sovrum_temperature
-          - entity: sensor.kok_temperature
-          - entity: sensor.vardagsrum_temperature
-          - entity: sensor.gastrum_temperature    
+      - type: vertical-stack
+        cards:
+        - type: glance
+          column_width: 20%
+          entities:
+            - entity: sensor.sovrum_temperature
+            - entity: sensor.kok_temperature
+            - entity: sensor.vardagsrum_temperature
+            - entity: sensor.gastrum_temperature    
+        - type: weather-forecast
+          name: SMHI
+          entity: weather.smhi_home
   - title: Vardagsrum
     id: living_room
     cards:
@@ -252,36 +275,29 @@ views:
     icon: mdi:settings
     cards:
       - type: gauge
-        title: Processor
+        name: CPU
         entity: sensor.processor_use
         severity:
           green: 0
           yellow: 50
           red: 80
       - type: gauge
-        title: Memory
+        name: Memory
         entity: sensor.memory_use_percent
         severity:
           green: 0
           yellow: 50
           red: 80
       - type: gauge
-        title: Disk use
-        entity: sensor.disk_use_percent_
+        name: Disk
+        entity: sensor.disk_use_percent
         severity:
           green: 0
           yellow: 45
           red: 85
       - type: entities
-        entities:
-          - entity: sensor.disk_use_
-            name: Disk use
-            secondary_info: last-changed
-          - entity: sensor.disk_free_
-            name: Disk free
-            secondary_info: last-changed
-      - type: entities
         title: Internet speed
+        show_header_toggle: false
         entities:
           - entity: sensor.speedtest_ping
             secondary_info: last-changed
@@ -291,6 +307,7 @@ views:
             secondary_info: last-changed
       - type: entities
         title: Z-wave
+        show_header_toggle: false
         entities:
           - entity: zwave.aeotec_zw090_zstick_gen5_eu
             name: Controller
@@ -308,7 +325,15 @@ views:
           - entity: zwave.soft_green
           - entity: zwave.perry_berry
       - type: entities
+        title: Zigbee
+        show_header_toggle: false
+        entities:
+          - input_boolean.zigbee_permit_join
+          - timer.zigbee_permit_join
+          - sensor.bridge_state
+      - type: entities
         title: Batterier
+        show_header_toggle: false
         entities:
           - entity: sensor.gastrum_temp_batt
             name: Termometer gästrum

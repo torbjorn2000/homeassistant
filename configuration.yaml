@@ -226,6 +226,7 @@ sensor:
       - type: disk_use_percent
         arg: "/"
       - type: memory_use_percent
+        unit: xx
       - type: processor_use
   - platform: speedtest
     minute: 30
@@ -271,6 +272,23 @@ light:
       - light.gastsoffan
       - light.gastfonstret # På skänken...
       - light.gaststjarnan # Lilla bollen...
+  - platform: group
+    name: Kök
+    entities:
+      - light.koksbank
+      - light.skapslingan
+      - light.serveringsgang
+      - light.koksstjarnan
+      - light.kokslampa
+  - platform: group
+    name: Hall
+    entities:
+      - light.hallbyran
+  - platform: group
+    name: Sovrum
+    entities:
+      - light.turbanen
+      - light.sanglamporna
   - platform: switch
     name: Vardagsstjärnan
     entity_id: switch.nexa_remote_31
@@ -428,7 +446,6 @@ rfxtrx:
   device: /dev/ttyUSB1
   debug: false
 
-group: !include groups.yaml
 automation: !include_dir_merge_list automations/
 scene: !include scenes.yaml
 script: !include scripts.yaml
