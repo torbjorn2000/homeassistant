@@ -226,7 +226,6 @@ sensor:
       - type: disk_use_percent
         arg: "/"
       - type: memory_use_percent
-        unit: xx
       - type: processor_use
   - platform: speedtest
     minute: 30
