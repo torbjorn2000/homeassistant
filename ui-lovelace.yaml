@@ -100,13 +100,13 @@ views:
             entity: light.gastrum
         - type: horizontal-stack
           cards:
-          - type: light
+          - type: entity-button
             entity: light.sovrum
           - type: light
             entity: light.kok
         - type: horizontal-stack
           cards:
-          - type: light
+          - type: entity-button
             entity: light.hall
       - type: entities
         title: Sonosar
@@ -188,13 +188,19 @@ views:
         entities:
           - light.koksbank
           - light.skapslingan
-          - light.kokslampa
-          - light.koksstjarnan
+          - entity: light.kokslampa
+            name: Taklampa
+          #- light.koksstjarnan
           - type: divider
           - entity: light.koksblomman
             icon: mdi:flower-tulip
+            name: Hängblomman
           - type: divider
           - light.serveringsgang
+      - type: entity-button
+        entity: light.koksblomman
+        icon: mdi:flower-tulip
+        name: Hängblomman
       - type: entities
         title: Temperatur
         entities:
