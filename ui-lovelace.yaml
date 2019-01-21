@@ -4,7 +4,7 @@
 
 title: Home
 resources:
-  - url: /local/button-card.js?v=0.0.4
+  - url: /local/button-card.js?v=0.0.5
     type: module
   - url: /local/tracker-card.js?v=0.1.5
     type: js
@@ -188,7 +188,7 @@ views:
         entities:
           - light.koksbank
           - light.skapslingan
-          - entity: light.kokslampa
+          - entity: light.kitchen_ceiling
             name: Taklampa
           #- light.koksstjarnan
           - type: divider
@@ -360,9 +360,9 @@ views:
           - entity: sensor.stora_vita
             icon: mdi:battery-70
             name: Trådfri stora vita
-          - entity: sensor.gula_dimmern
-            icon: mdi:battery-70
-            name: Trådfri gula
+          #- entity: sensor.gula_dimmern
+          #  icon: mdi:battery-70
+          #  name: Trådfri gula
           - entity: sensor.vita_dimmern
             icon: mdi:battery-70
             name: Trådfri vita
