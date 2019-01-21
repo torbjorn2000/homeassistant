@@ -11,11 +11,13 @@
       state: on
       brightness: 80
       color_temp: 370
-    light.hall: on
+    light.hallbyran: on
     light.kok:
       state: on
       brightness_pct: 80
       color_temp: 370
+    light.kitchen_ceiling: on
+      brightness_pct: 40
     light.sovrum: on
     
 - name: Myslampor vardagsrum

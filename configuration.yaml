@@ -278,7 +278,7 @@ light:
       - light.skapslingan
       - light.serveringsgang
       - light.koksstjarnan
-      - light.kokslampa
+      - light.kitchen_ceiling
   - platform: group
     name: Hall
     entities:

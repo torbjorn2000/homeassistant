@@ -51,7 +51,7 @@ alexa:
       name: "Kitchen sling"
     light.koksblomman:
       name: "Kitchen flower"
-    light.kokslampa:
+    light.kitchen_ceiling:
       name: "Kitchen ceiling lamp"
     light.serveringsgang:
       name: "Butler lamp"
