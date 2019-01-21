@@ -16,7 +16,8 @@
       state: on
       brightness_pct: 80
       color_temp: 370
-    light.kitchen_ceiling: on
+    light.kitchen_ceiling: 
+      state: on
       brightness_pct: 40
     light.sovrum: on
     
