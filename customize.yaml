@@ -15,13 +15,6 @@ media_player.sovrum:
 #binary_sensor.brandvarnare_sensor_status:
 #  icon: mdi:fire
 #  friendly_name: Brand
-sensor.gastrum_temperature:
-  friendly_name: Gästrum
-sensor.gastrum_humidity:
-  friendly_name: Fukt
-  icon: mdi:water
-sensor.ringvagen_temperature:
-  friendly_name: Ringvägen
 sensor.sovrum_temperature:
   friendly_name: Sovrum
 sensor.sovrum_humidity:

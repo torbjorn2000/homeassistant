@@ -239,14 +239,14 @@ views:
           - entity: light.gaststjarnan
           - entity: light.gastfonstret
       - type: entities
-        title: Temperatur
+        title: Temperatur mm
         entities:
-          - entity: sensor.gastrum_temperature
+          - entity: sensor.white_temp_temp
             name: Temp
-          - entity: sensor.gastrum_humidity
-            name: 'Fukt'
-          - entity: sensor.ringvagen_temperature
-            name: 'Ringvägen'
+          - entity: sensor.white_temp_humidity
+            name: Fukt
+          - entity: sensor.white_temp_pressure
+            name: Lufttryck
       - type: entities
         entities:
         - entity: media_player.gastrum
