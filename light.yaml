@@ -61,8 +61,8 @@
   name: Gästsoffan
   entity_id: switch.gastsoffan
 - platform: switch
-  name: Skåpslingan
-  entity_id: switch.skapslingan
+  name: Kitchen sling
+  entity_id: switch.kitchen_sling
 - platform: switch
   name: Turbanen
   entity_id: switch.turbanen    
