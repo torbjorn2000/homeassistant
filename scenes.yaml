@@ -20,6 +20,7 @@
       state: on
       brightness_pct: 40
     light.sovrum: on
+    input_boolean.cozy_dozy: on
     
 - name: Myslampor vardagsrum
   entities:
@@ -31,6 +32,7 @@
 #        brightness: 30
     #light.vardagsstjarnan: on # Vardagsstjärnan
     input_boolean.myslampor_vardagsrum : on # Krävs så länge myslampor slås på från HASS och inte node. Node lyssnar på denna.
+    input_boolean.cozy_dozy: on
 
 - name: Cleaning
   entities:
@@ -38,6 +40,7 @@
       state: on
       brightness_pct: 100
     input_boolean.myslampor_vardagsrum : on
+    input_boolean.cozy_dozy: on
 
 - name: TV mode
   entities:
@@ -81,6 +84,7 @@
     light.sovrum: off
     light.kok: off
     input_boolean.myslampor_vardagsrum : off
+    input_boolean.cozy_dozy: off
 
 - name: Per's morning
   entities:
@@ -101,3 +105,4 @@
       state: on
       brightness_pct: 80
       color_temp: 370
+    input_boolean.cozy_dozy: on

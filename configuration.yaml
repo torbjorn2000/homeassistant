@@ -171,6 +171,7 @@ homekit:
 
 input_boolean:
   myslampor_vardagsrum:
+  cozy_dozy:  
   tobbe_morning_alarm:
     name: Tobbe morgonlarm
   zigbee_permit_join:
