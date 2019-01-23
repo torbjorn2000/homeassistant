@@ -14,9 +14,9 @@ alexa:
       name: "Hanging lamps"
     light.tvbanken:
       name: "TV lamp"
-    light.plexihornan:
+    light.plexi_lamp:
       name: "Plexi corner"
-    light.soplampan:
+    light.garbage_lamp:
       name: "Garbage lamp"
     light.vardagsblomma:
       name: "Living room flower lamp"
@@ -24,7 +24,7 @@ alexa:
       name: "Living room ceiling light"
     light.baslampan:
       name: "Base lamp"    
-    light.vardagsfonstret:
+    light.living_room_window:
       name: Living room window
     light.julgranen:
       name: Christmas tree
@@ -53,7 +53,7 @@ alexa:
       name: "Kitchen flower"
     light.kitchen_ceiling:
       name: "Kitchen ceiling lamp"
-    light.serveringsgang:
+    light.butler_lamp:
       name: "Butler lamp"
 
     # Hall

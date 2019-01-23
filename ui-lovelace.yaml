@@ -157,13 +157,13 @@ views:
           - light.fibaro_wall_dimmer_vardagsrum_taklampa
           - type: divider
           - light.kraftlampan
-          - light.soplampan
+          - light.garbage_lamp
           - light.vardagsblomma
           - light.hanglamporna
           - light.baslampan
-          - light.vardagsfonstret
+          - light.living_room_window
           - light.tv_banken
-          - light.plexihornan
+          - light.plexi_lamp
       - type: entities
         title: Temperatur
         entities:
@@ -196,7 +196,7 @@ views:
             icon: mdi:flower-tulip
             name: Hängblomman
           - type: divider
-          - light.serveringsgang
+          - light.butler_lamp
       - type: entity-button
         entity: light.koksblomman
         icon: mdi:flower-tulip

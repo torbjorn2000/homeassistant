@@ -2,12 +2,12 @@
   name: Vardagsrum mys
   entities:
     - light.kraftlampan
-    - light.soplampan
+    - light.garbage_lamp
     - light.vardagsblomma
     - light.hanglamporna
     - light.baslampan
-    - light.vardagsfonstret
-    - light.plexihornan
+    - light.living_room_window
+    - light.plexi_lamp
     - light.tv_banken
 - platform: group
   name: Vardagsrum
@@ -27,7 +27,7 @@
   entities:
     - light.koksbank
     - light.skapslingan
-    - light.serveringsgang
+    - light.butler_lamp
     - light.koksstjarnan
     - light.kitchen_ceiling
 - platform: group
