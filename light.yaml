@@ -26,7 +26,7 @@
   name: Kök
   entities:
     - light.koksbank
-    - light.skapslingan
+    - light.kitchen_sling
     - light.butler_lamp
     - light.koksstjarnan
     - light.kitchen_ceiling

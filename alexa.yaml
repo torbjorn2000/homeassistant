@@ -47,7 +47,7 @@ alexa:
       name: "Kitchen star"
     light.koksbank:
       name: "Sink lamp"
-    light.skapslingan:
+    light.kitchen_sling:
       name: "Kitchen sling"
     light.koksblomman:
       name: "Kitchen flower"

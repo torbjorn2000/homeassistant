@@ -187,7 +187,7 @@ views:
         title: Lampor
         entities:
           - light.koksbank
-          - light.skapslingan
+          - light.kitchen_sling
           - entity: light.kitchen_ceiling
             name: Taklampa
           #- light.koksstjarnan
