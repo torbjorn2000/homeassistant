@@ -11,7 +11,7 @@
       state: on
       brightness: 80
       color_temp: 370
-    light.hallbyran: on
+    light.hall: on
     light.kok:
       state: on
       brightness_pct: 80

@@ -1,0 +1,77 @@
+- platform: group
+  name: Vardagsrum mys
+  entities:
+    - light.kraftlampan
+    - light.soplampan
+    - light.vardagsblomma
+    - light.hanglamporna
+    - light.baslampan
+    - light.vardagsfonstret
+    - light.plexihornan
+    - light.tv_banken
+- platform: group
+  name: Vardagsrum
+  entities:
+    - light.vardagsrum_mys
+    - light.fibaro_wall_dimmer_vardagsrum_taklampa
+- platform: group
+  name: Gästrum
+  entities:
+    - light.gastbollen
+    - light.gastbokhyllan
+    - light.gastsoffan
+    - light.gastfonstret # På skänken...
+    - light.gaststjarnan # Lilla bollen...
+- platform: group
+  name: Kök
+  entities:
+    - light.koksbank
+    - light.skapslingan
+    - light.serveringsgang
+    - light.koksstjarnan
+    - light.kitchen_ceiling
+- platform: group
+  name: Hall
+  entities:
+    - light.hallbyran
+- platform: group
+  name: Sovrum
+  entities:
+    - light.turbanen
+    - light.sanglamporna
+- platform: switch
+  name: Vardagsstjärnan
+  entity_id: switch.nexa_remote_31
+- platform: switch
+  name: Gäststjärnan
+  entity_id: switch.nexa_remote_22
+- platform: switch
+  name: Köksstjärnan
+  entity_id: switch.nexa_remote_23
+- platform: switch
+  name: Hallbyrån
+  entity_id: switch.telldus_plugin_switch_1
+- platform: switch
+  name: TV-Bänken
+  entity_id: switch.telldus_plugin_switch_2
+- platform: switch
+  name: Gästbokhyllan
+  entity_id: switch.gastbokhyllan
+- platform: switch
+  name: Gästsoffan
+  entity_id: switch.gastsoffan
+- platform: switch
+  name: Skåpslingan
+  entity_id: switch.skapslingan
+- platform: switch
+  name: Turbanen
+  entity_id: switch.turbanen    
+- platform: switch
+  name: Sänglamporna
+  entity_id: switch.sanglamporna    
+- platform: switch
+  name: Balkongen
+  entity_id: switch.nexa_sovrum_3    
+- platform: switch
+  name: Julgranen
+  entity_id: switch.nexa_vrum_2
