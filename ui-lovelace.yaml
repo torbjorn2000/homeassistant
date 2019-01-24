@@ -144,7 +144,7 @@ views:
             - entity: sensor.sovrum_temperature
             - entity: sensor.kok_temperature
             - entity: sensor.vardagsrum_temperature
-            - entity: sensor.gastrum_temperature    
+            - entity: sensor.white_temp_1_temp
         - type: weather-forecast
           name: SMHI
           entity: weather.smhi_home
@@ -249,11 +249,11 @@ views:
         title: Temperatur mm
         show_header_toggle: false
         entities:
-          - entity: sensor.white_temp_temp
+          - entity: sensor.white_temp_1_temp
             name: Temp
-          - entity: sensor.white_temp_humidity
+          - entity: sensor.white_temp_1_humidity
             name: Fukt
-          - entity: sensor.white_temp_pressure
+          - entity: sensor.white_temp_1_pressure
             name: Lufttryck
       - type: entities
         entities:
