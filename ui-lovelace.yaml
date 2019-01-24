@@ -166,6 +166,7 @@ views:
           - light.plexi_lamp
       - type: entities
         title: Temperatur
+        show_header_toggle: false
         entities:
           - entity: sensor.vardagsrum_temperature
             name: 'Temp'
@@ -203,6 +204,7 @@ views:
         name: Hängblomman
       - type: entities
         title: Temperatur
+        show_header_toggle: false
         entities:
           - entity: sensor.kok_temperature
             name: 'Temp'
@@ -234,12 +236,18 @@ views:
         title: Lampor
         entities:
           - entity: light.gastbollen
+            name: Stora bollen
           - entity: light.gastbokhyllan
+            name: Bokhyllan
           - entity: light.gastsoffan
+            name: Soffan
           - entity: light.guest_window
+            name: Fönstret
           - entity: light.guest_sideboard
+            name: Skänken
       - type: entities
         title: Temperatur mm
+        show_header_toggle: false
         entities:
           - entity: sensor.white_temp_temp
             name: Temp
@@ -264,6 +272,7 @@ views:
           - entity: light.sanglamporna
       - type: entities
         title: Temperatur
+        show_header_toggle: false
         entities:
           - entity: sensor.sovrum_temperature
             name: 'Temp'

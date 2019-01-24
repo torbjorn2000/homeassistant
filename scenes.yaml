@@ -6,7 +6,6 @@
     light.fibaro_wall_dimmer_vardagsrum_taklampa:
       state: on
       brightness: 30
-    input_boolean.myslampor_vardagsrum : on # Krävs så länge myslampor slås på från HASS och inte node. Node lyssnar på denna.
     light.gastrum:
       state: on
       brightness: 80
@@ -20,6 +19,7 @@
       state: on
       brightness_pct: 40
     light.sovrum: on
+    input_boolean.myslampor_vardagsrum : on
     input_boolean.cozy_dozy: on
     
 - name: Myslampor vardagsrum
@@ -27,11 +27,7 @@
     light.vardagsrum_mys:
       state: on
       brightness: 160
-#    light.fibaro_wall_dimmer_vardagsrum_taklampa:
-#        state: on
-#        brightness: 30
-    #light.vardagsstjarnan: on # Vardagsstjärnan
-    input_boolean.myslampor_vardagsrum : on # Krävs så länge myslampor slås på från HASS och inte node. Node lyssnar på denna.
+    input_boolean.myslampor_vardagsrum : on
     input_boolean.cozy_dozy: on
 
 - name: Cleaning
@@ -41,14 +37,6 @@
       brightness_pct: 100
     input_boolean.myslampor_vardagsrum : on
     input_boolean.cozy_dozy: on
-
-- name: TV mode
-  entities:
-#    light.vardagsrum_mys_dimbara:
-#      state: on
-#      brightness: 90
-    light.hanglamporna: off
-#   light.fibaro_wall_dimmer_vardagsrum_taklampa: off
 
 - name: Movie mode
   entities:
@@ -94,7 +82,6 @@
     light.fibaro_wall_dimmer_vardagsrum_taklampa:
       state: on
       brightness: 30
-    input_boolean.myslampor_vardagsrum : on # Krävs så länge myslampor slås på från HASS och inte node. Node lyssnar på denna.
     light.gastrum:
       state: on
       brightness: 80
@@ -106,3 +93,4 @@
       brightness_pct: 80
       color_temp: 370
     input_boolean.cozy_dozy: on
+    input_boolean.myslampor_vardagsrum : on

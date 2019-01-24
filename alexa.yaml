@@ -79,7 +79,6 @@ alexa:
       - script.pers_morning
       - script.p1_vardagsrummet
       - scene.darkness
-      - scene.tv_mode
       - scene.movie_mode
     exclude_domains:
       - script
