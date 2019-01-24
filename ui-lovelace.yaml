@@ -10,10 +10,6 @@ resources:
     type: js
   - url: /local/mini-media-player-bundle.js?v=0.9.8
     type: module
-#  - url: /local/kiosk.js?v=1
-#    type: js
-#  - url: /local/monster-card.js?v=0.2.3
-#    type: js
 
 views:
   - title: Översikt maxi
@@ -142,9 +138,13 @@ views:
           column_width: 20%
           entities:
             - entity: sensor.sovrum_temperature
+              name: Sovrum
             - entity: sensor.kok_temperature
+              name: Kök
             - entity: sensor.vardagsrum_temperature
+              name: Vardagsrum
             - entity: sensor.white_temp_1_temp
+              name: Gästrum
         - type: weather-forecast
           name: SMHI
           entity: weather.smhi_home
@@ -346,11 +346,29 @@ views:
           - input_boolean.zigbee_permit_join
           - timer.zigbee_permit_join
           - sensor.bridge_state
+          - type: section
+            label: Länkkvalitet
+          - entity: sensor.white_temp_1_linkquality
+            name: Vita temp 1
+            secondary_info: last-changed
+            icon: mdi:access-point
+          - entity: sensor.white_button_1_linkquality
+            name: Vita knappen 1
+            secondary_info: last-changed
+            icon: mdi:access-point
+          - entity: sensor.white_button_2_linkquality
+            name: Vita knappen 2
+            secondary_info: last-changed
+            icon: mdi:access-point
+          - entity: sensor.white_button_3_linkquality
+            name: Vita knappen 3
+            secondary_info: last-changed
+            icon: mdi:access-point
       - type: entities
         title: Batterier
         show_header_toggle: false
         entities:
-          - entity: sensor.gastrum_temp_batt
+          - entity: sensor.white_temp_1_battery
             name: Termometer gästrum
             icon: mdi:battery-70
           - entity: sensor.sovrum_temp_batt
@@ -369,12 +387,18 @@ views:
           - entity: sensor.stora_vita
             icon: mdi:battery-70
             name: Trådfri stora vita
-          - entity: sensor.dimmer_yellow_brightness
-          #  icon: mdi:battery-70
-            name: Trådfri gula (ljus)
           - entity: sensor.vita_dimmern
             icon: mdi:battery-70
             name: Trådfri vita
+          - entity: sensor.white_button_1_battery
+            name: Vita knappen 1
+            icon: mdi:battery-70
+          - entity: sensor.white_button_2_battery
+            name: Vita knappen 2
+            icon: mdi:battery-70
+          - entity: sensor.white_button_3_battery
+            name: Vita knappen 3
+            icon: mdi:battery-70
       - type: custom:tracker-card
         title:
         trackers:
