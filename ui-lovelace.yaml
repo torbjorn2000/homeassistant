@@ -88,22 +88,41 @@ views:
                 action: turn_on
                 data:
                   entity_id: script.leaving_home
-        - type: horizontal-stack
-          cards:
-          - type: light
-            entity: light.vardagsrum
-          - type: light
-            entity: light.gastrum
-        - type: horizontal-stack
-          cards:
-          - type: entity-button
-            entity: light.sovrum
-          - type: light
-            entity: light.kok
-        - type: horizontal-stack
-          cards:
-          - type: entity-button
-            entity: light.hall
+        - type: glance
+          columns: 3
+          show_state: false
+          title: Lampor
+          entities:
+            - entity: light.sovrum
+              name: Sovrum
+              icon: mdi:hotel
+              tap_action: 
+                action: toggle
+            - entity: light.kok
+              name: Kök
+              icon: mdi:stove
+              tap_action: 
+                action: toggle
+            - entity: light.vardagsrum
+              name: Vardagsrum
+              icon: mdi:sofa
+              tap_action: 
+                action: toggle
+            - entity: light.gastrum
+              name: Gästrum
+              icon: mdi:account-plus
+              tap_action: 
+                action: toggle
+            - entity: light.hall
+              name: Hall
+              icon: mdi:door
+              tap_action: 
+                action: toggle
+            - entity: light.flowers
+              name: Blomlampor
+              icon: mdi:flower-tulip
+              tap_action: 
+                action: toggle
       - type: entities
         title: Sonosar
         show_header_toggle: false
@@ -135,7 +154,6 @@ views:
       - type: vertical-stack
         cards:
         - type: glance
-          column_width: 20%
           entities:
             - entity: sensor.sovrum_temperature
               name: Sovrum
@@ -151,11 +169,11 @@ views:
   - title: Vardagsrum
     id: living_room
     cards:
-      - type: entities
-        title: Lampor
+      - type: glance
+        columns: 4
+        show_state: false
         entities:
           - light.fibaro_wall_dimmer_vardagsrum_taklampa
-          - type: divider
           - light.kraftlampan
           - light.garbage_lamp
           - light.vardagsblomma
@@ -164,9 +182,7 @@ views:
           - light.living_room_window
           - light.tv_banken
           - light.plexi_lamp
-      - type: entities
-        title: Temperatur
-        show_header_toggle: false
+      - type: glance
         entities:
           - entity: sensor.vardagsrum_temperature
             name: 'Temp'
@@ -175,10 +191,15 @@ views:
       - type: entities
         entities:
         - entity: media_player.vardagsrum
-          type: "custom:mini-media-player"
-          show_source: true
-          name: Musikmaskin
+          type: custom:mini-media-player
+          name: Sonosen
           hide_power: true
+          show_source: true
+          short_info: true
+          consider_pause_idle: true
+          idle_view: true
+          sonos_grouping: !include sonos_grouping.yaml
+          media_buttons: !include sonos_buttons.yaml
       - type: media-control
         entity: media_player.tv_vardagsrum    
   - title: Kök
