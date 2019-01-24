@@ -33,14 +33,16 @@ alexa:
       display_categories: 'TV'
 
     # Gästrum
-    light.gastfonstret:
-      name: "Guest window"
+    light.guest_sideboard:
+      name: "Guest side board"
     light.gastbollen:
       name: "Guest ball"
     light.gastsoffan:
       name: Guest sofa
     light.gastbokhyllan:
       name: Book shelf
+    light.guest_window:
+      name: Guest window
 
     # Kök
     light.koksstjarnan:

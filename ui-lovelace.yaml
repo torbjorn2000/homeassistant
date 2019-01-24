@@ -236,8 +236,8 @@ views:
           - entity: light.gastbollen
           - entity: light.gastbokhyllan
           - entity: light.gastsoffan
-          - entity: light.gaststjarnan
-          - entity: light.gastfonstret
+          - entity: light.guest_window
+          - entity: light.guest_sideboard
       - type: entities
         title: Temperatur mm
         entities:

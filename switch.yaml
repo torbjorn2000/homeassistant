@@ -67,7 +67,7 @@
       name: nexa_remote_22 # Taklampa hall.
       fire_event: true
     0b11001600a7d99207010f70:
-      name: nexa_remote_23  # Köksstjärna
+      name: nexa_remote_23  # Skåpslingan
       fire_event: true
     # 0b11000d00a7d99208000060:
     #   name: nexa_remote_24 # Balkongen

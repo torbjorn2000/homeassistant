@@ -20,8 +20,8 @@
     - light.gastbollen
     - light.gastbokhyllan
     - light.gastsoffan
-    - light.gastfonstret # På skänken...
-    - light.gaststjarnan # Lilla bollen...
+    - light.guest_sideboard
+    - light.guest_window # Lilla bollen...
 - platform: group
   name: Kök
   entities:
@@ -43,10 +43,7 @@
   name: Vardagsstjärnan
   entity_id: switch.nexa_remote_31
 - platform: switch
-  name: Gäststjärnan
-  entity_id: switch.nexa_remote_22
-- platform: switch
-  name: Köksstjärnan
+  name: Kitchen sling
   entity_id: switch.nexa_remote_23
 - platform: switch
   name: Hallbyrån
@@ -61,8 +58,8 @@
   name: Gästsoffan
   entity_id: switch.gastsoffan
 - platform: switch
-  name: Kitchen sling
-  entity_id: switch.kitchen_sling
+  name: Guest window
+  entity_id: switch.guest_window
 - platform: switch
   name: Turbanen
   entity_id: switch.turbanen    
