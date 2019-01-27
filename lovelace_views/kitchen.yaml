@@ -1,0 +1,38 @@
+title: Kök
+id: kitchen
+cards:
+  - type: entities
+    title: Lampor
+    entities:
+      - light.koksbank
+      - light.kitchen_sling
+      - entity: light.kitchen_ceiling
+        name: Taklampa
+      #- light.koksstjarnan
+      - type: divider
+      - entity: light.koksblomman
+        icon: mdi:flower-tulip
+        name: Hängblomman
+      - type: divider
+      - light.butler_lamp
+  - type: entity-button
+    entity: light.koksblomman
+    icon: mdi:flower-tulip
+    name: Hängblomman
+  - type: entities
+    title: Temperatur
+    show_header_toggle: false
+    entities:
+      - entity: sensor.kok_temperature
+        name: 'Temp'
+      - entity: sensor.kok_humidity
+        name: 'Fukt'
+      - entity: sensor.garden_temperature
+        name: 'Gården'
+  - type: entities
+    entities:
+    - entity: media_player.kok
+      type: "custom:mini-media-player"
+      show_source: true
+      name: Musikmaskin
+      hide_power: true

@@ -1,0 +1,24 @@
+title: Sovrum
+id: bedroom
+cards:
+  - type: entities
+    title: Lampor
+    entities:
+      - entity: light.turbanen
+      - entity: light.sanglamporna
+  - type: entities
+    title: Temperatur
+    show_header_toggle: false
+    entities:
+      - entity: sensor.sovrum_temperature
+        name: 'Temp'
+      - entity: sensor.sovrum_humidity
+        name: 'Fukt'
+  - type: entities
+    entities:
+    - entity: media_player.sovrum
+      type: "custom:mini-media-player"
+      show_source: true
+      name: Musikmaskin
+      hide_power: true
+      

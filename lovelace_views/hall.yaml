@@ -1,0 +1,10 @@
+title: Hall
+id: hall
+cards:
+  - type: entities
+    title: Lampor
+    entities:
+      - light.hallbyran
+      - type: divider
+      - entity: light.hallblomma
+        icon: mdi:flower-tulip

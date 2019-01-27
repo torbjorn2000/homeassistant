@@ -1,0 +1,154 @@
+title: Översikt maxi
+icon: mdi:laptop
+id: overview
+cards:
+  - type: vertical-stack
+    cards:
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          icon: mdi:heart
+          name: Myslampor
+          #color: red
+          #size: 100%
+          style:
+            - text-transform: none
+            - font-weight: bold
+          action: service
+          service:
+            domain: script
+            action: turn_on
+            data:
+              entity_id: script.cozy_dozy
+        - type: "custom:button-card"
+          icon: mdi:power-sleep
+          name: Släckt
+        #  size: 100%
+          style:
+            - text-transform: none
+            - font-weight: bold
+          action: service
+          service:
+            domain: scene
+            action: turn_on
+            data:
+              entity_id: scene.darkness
+    - type: horizontal-stack
+      cards:
+        - type: "custom:button-card"
+          icon: mdi:coffee
+          name: Pers morgon
+          #size: 100%
+          style:
+            - text-transform: none
+            - font-weight: bold
+          action: service
+          service:
+            domain: scrit
+            action: turn_on
+            data:
+              entity_id: script.pers_morning
+        - type: "custom:button-card"
+          icon: mdi:broom
+          name: Städ
+        #  size: 100%
+          style:
+            - text-transform: none
+            - font-weight: bold
+          action: service
+          service:
+            domain: scene
+            action: turn_on
+            data:
+              entity_id: scene.cleaning
+        - type: "custom:button-card"
+          icon: mdi:door
+          name: Hej då
+          #size: 100%
+          style:
+            - text-transform: none
+            - font-weight: bold
+          action: service
+          service:
+            domain: script
+            action: turn_on
+            data:
+              entity_id: script.leaving_home
+    - type: glance
+      columns: 3
+      show_state: false
+      title: Lampor
+      entities:
+        - entity: light.sovrum
+          name: Sovrum
+          icon: mdi:hotel
+          tap_action: 
+            action: toggle
+        - entity: light.kok
+          name: Kök
+          icon: mdi:stove
+          tap_action: 
+            action: toggle
+        - entity: light.vardagsrum
+          name: Vardagsrum
+          icon: mdi:sofa
+          tap_action: 
+            action: toggle
+        - entity: light.gastrum
+          name: Gästrum
+          icon: mdi:account-plus
+          tap_action: 
+            action: toggle
+        - entity: light.hall
+          name: Hall
+          icon: mdi:door
+          tap_action: 
+            action: toggle
+        - entity: light.flowers
+          name: Blomlampor
+          icon: mdi:flower-tulip
+          tap_action: 
+            action: toggle
+  - type: entities
+    title: Sonosar
+    show_header_toggle: false
+    entities:
+    - entity: media_player.kok
+      type: "custom:mini-media-player"
+      group: true
+      show_source: true
+      name: Kök
+      hide_power: true
+    - entity: media_player.gastrum
+      type: "custom:mini-media-player"
+      group: true
+      show_source: true
+      name: Gästrum
+      hide_power: true
+    - entity: media_player.sovrum
+      type: "custom:mini-media-player"
+      group: true
+      show_source: true
+      name: Sovrum
+      hide_power: true
+    - entity: media_player.vardagsrum
+      type: "custom:mini-media-player"
+      group: true
+      show_source: true
+      name: Vardagsrum
+      hide_power: true
+  - type: vertical-stack
+    cards:
+    - type: glance
+      entities:
+        - entity: sensor.sovrum_temperature
+          name: Sovrum
+        - entity: sensor.kok_temperature
+          name: Kök
+        - entity: sensor.vardagsrum_temperature
+          name: Vardagsrum
+        - entity: sensor.white_temp_1_temp
+          name: Gästrum
+    - type: weather-forecast
+      name: SMHI
+      entity: weather.smhi_home

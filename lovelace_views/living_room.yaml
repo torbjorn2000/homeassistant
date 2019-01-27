@@ -1,0 +1,34 @@
+title: Vardagsrum
+id: living_room
+cards:
+  - type: glance
+    columns: 4
+    show_state: false
+    entities:
+      - light.fibaro_wall_dimmer_vardagsrum_taklampa
+      - light.kraftlampan
+      - light.garbage_lamp
+      - light.vardagsblomma
+      - light.hanglamporna
+      - light.baslampan
+      - light.living_room_window
+      - light.tv_banken
+      - light.plexi_lamp
+  - type: glance
+    entities:
+      - entity: sensor.vardagsrum_temperature
+        name: 'Temp'
+      - entity: sensor.vardagsrum_humidity
+        name: 'Fukt'
+  - type: custom:mini-media-player
+    entity: media_player.vardagsrum
+    name: Sonosen
+    hide_power: true
+    show_source: true
+    short_info: true
+    consider_pause_idle: true
+    idle_view: true
+    sonos_grouping: !include sonos_grouping.yaml
+    media_buttons: !include sonos_buttons.yaml
+  - type: media-control
+    entity: media_player.tv_vardagsrum
