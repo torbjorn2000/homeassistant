@@ -165,6 +165,12 @@ homekit:
       - light.kok
       - light.hall
       - light.sovrum
+      - light.flowers
+      - light.opal_1
+      - light.opal_2
+      - light.opal_3
+      - light.balkongen
+      - light.vardagsblomman
       - sensor.yr_symbol
       - sensor.yr_temperature
       - binary_sensor.brand

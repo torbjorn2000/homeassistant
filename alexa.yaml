@@ -18,7 +18,7 @@ alexa:
       name: "Plexi corner"
     light.garbage_lamp:
       name: "Garbage lamp"
-    light.vardagsblomma:
+    light.living_room_flower:
       name: "Living room flower lamp"
     light.fibaro_wall_dimmer_vardagsrum_taklampa:
       name: "Living room ceiling light"

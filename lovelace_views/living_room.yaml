@@ -8,7 +8,7 @@ cards:
       - light.fibaro_wall_dimmer_vardagsrum_taklampa
       - light.kraftlampan
       - light.garbage_lamp
-      - light.vardagsblomma
+      - light.living_room_flower
       - light.hanglamporna
       - light.baslampan
       - light.living_room_window
@@ -29,6 +29,6 @@ cards:
     consider_pause_idle: true
     idle_view: true
     sonos_grouping: !include sonos_grouping.yaml
-    media_buttons: !include sonos_buttons.yaml
+#    media_buttons: !include sonos_buttons.yaml
   - type: media-control
     entity: media_player.tv_vardagsrum

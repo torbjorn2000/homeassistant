@@ -3,7 +3,7 @@
   entities:
     - light.kraftlampan
     - light.garbage_lamp
-    - light.vardagsblomma
+    - light.living_room_flower
     - light.hanglamporna
     - light.baslampan
     - light.living_room_window
@@ -30,6 +30,7 @@
     - light.butler_lamp
     - light.koksstjarnan
     - light.kitchen_ceiling
+    - light.kitchen_window
 - platform: group
   name: Hall
   entities:
@@ -49,7 +50,10 @@
   entity_id: switch.nexa_remote_31
 - platform: switch
   name: Kitchen sling
-  entity_id: switch.nexa_remote_23
+  entity_id: switch.kitchen_sling
+- platform: switch
+  name: Kitchen window
+  entity_id: switch.kitchen_window
 - platform: switch
   name: Hallbyrån
   entity_id: switch.telldus_plugin_switch_1
