@@ -40,6 +40,7 @@
   entities:
     - light.turbanen
     - light.sanglamporna
+    - light.bedroom_mirror
 - platform: group
   name: Flowers
   entities:

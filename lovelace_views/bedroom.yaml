@@ -6,6 +6,7 @@ cards:
     entities:
       - entity: light.turbanen
       - entity: light.sanglamporna
+      - entity: light.bedroom_mirror
   - type: entities
     title: Temperatur
     show_header_toggle: false

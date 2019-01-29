@@ -6,6 +6,8 @@ alexa:
       name: "Bed lamps"
     light.turbanen:
       name: "Turban"
+    light.bedroom_mirror:
+      name: "Bedroom mirror"
 
     # Vardagsrum
     light.kraftlampan:
