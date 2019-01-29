@@ -46,9 +46,9 @@
   entities:
     - light.hallblomma
     - light.koksblomman
-- platform: switch
-  name: Vardagsstjärnan
-  entity_id: switch.nexa_remote_31
+#- platform: switch
+#  name: Vardagsstjärnan
+# entity_id: switch.nexa_remote_31
 - platform: switch
   name: Kitchen sling
   entity_id: switch.kitchen_sling
@@ -79,6 +79,6 @@
 - platform: switch
   name: Balkongen
   entity_id: switch.nexa_sovrum_3    
-- platform: switch
-  name: Julgranen
-  entity_id: switch.nexa_vrum_2
+#- platform: switch
+#  name: Julgranen
+#  entity_id: switch.nexa_vrum_2
