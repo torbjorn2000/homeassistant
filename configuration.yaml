@@ -52,15 +52,15 @@ custom_updater:
     - https://raw.githubusercontent.com/kuuji/button-card/master/tracker.json
     - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
 
- webhook:
+webhook:
  
- zigbee2mqtt_networkmap:
+zigbee2mqtt_networkmap:
  
- panel_iframe:
-   networkmap:
-     title: 'Zigbee Map'
-     url: '/local/zigbee2mqtt_networkmap/map.html?engine=circo '
-     icon: 'mdi:graphql'
+panel_iframe:
+  networkmap:
+    title: 'Zigbee Map'
+    url: '/local/zigbee2mqtt_networkmap/map.html?engine=circo '
+    icon: 'mdi:graphql'
   nodered:
     title: 'Node-RED'
     icon: mdi:shuffle-variant
