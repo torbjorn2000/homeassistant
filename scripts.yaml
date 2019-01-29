@@ -31,7 +31,8 @@ leaving_home:
 
 update_zigbee_nerwork_map:
   alias: Update Zigbee network map
-  service: zigbee2mqtt_networkmap.update
+  sequence:
+    - service: zigbee2mqtt_networkmap.update
 
 p1_vardagsrummet:
   alias: "P1 in the living room"
