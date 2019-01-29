@@ -2,10 +2,11 @@
   entities:
     light.vardagsrum_mys:
       state: on
-      brightness: 160
+      brightness_pct: 60
+      color_temp: 370
     light.fibaro_wall_dimmer_vardagsrum_taklampa:
       state: on
-      brightness: 30
+      brightness_pct: 10
     light.gastrum:
       state: on
       brightness: 80
@@ -17,8 +18,10 @@
       color_temp: 370
     light.kitchen_ceiling: 
       state: on
-      brightness_pct: 40
-    light.sovrum: on
+      brightness_pct: 30
+    light.sovrum: 
+      state: on
+      brightness_pct: 50
     input_boolean.myslampor_vardagsrum : on
     input_boolean.cozy_dozy: on
     
