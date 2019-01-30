@@ -1,34 +1,77 @@
 title: Vardagsrum
 id: living_room
 cards:
-  - type: glance
-    columns: 4
-    show_state: false
-    entities:
-      - light.fibaro_wall_dimmer_vardagsrum_taklampa
-      - light.kraftlampan
-      - light.garbage_lamp
-      - light.living_room_flower
-      - light.hanglamporna
-      - light.baslampan
-      - light.living_room_window
-      - light.tv_banken
-      - light.plexi_lamp
-  - type: glance
-    entities:
-      - entity: sensor.vardagsrum_temperature
-        name: 'Temp'
-      - entity: sensor.vardagsrum_humidity
-        name: 'Fukt'
+  - type: vertical-stack
+    cards:
+    - type: entities
+      header-toggle: true
+      title: Lampor
+      entities:
+      - type: custom:slider-entity-row
+        icon: mdi:ceiling-light
+        entity: light.fibaro_wall_dimmer_vardagsrum_taklampa
+        name: Taket
+        toggle: true
+      - type: custom:slider-entity-row
+        icon: mdi:floor-lamp
+        entity: light.kraftlampan
+        name: Kräftlampan
+        toggle: true
+      - type: custom:slider-entity-row
+        icon: mdi:desk-lamp
+        entity: light.living_room_flower
+        name: Hyllan
+        toggle: true
+      - type: custom:slider-entity-row
+        icon: mdi:trash-can
+        entity: light.garbage_lamp
+        name: Soplampan
+        toggle: true
+      - type: custom:slider-entity-row
+        icon: mdi:lightbulb
+        entity: light.hanglamporna
+        name: Hänglamporna
+        toggle: true
+      - type: custom:slider-entity-row
+        icon: mdi:windows
+        entity: light.living_room_window
+        name: Fönstret
+        toggle: true
+      - type: custom:slider-entity-row
+        icon: mdi:speaker-wireless
+        entity: light.baslampan
+        toggle: true
+      - type: custom:slider-entity-row
+        icon: mdi:television-box
+        entity: light.tv_banken
+        name: TV-bänken
+        toggle: true
+      - type: custom:slider-entity-row
+        icon: mdi:lamp
+        entity: light.plexi_lamp
+        toggle: true
+  - type: horizontal-stack
+    cards:
+    - type: sensor
+      name: Temp
+      entity: sensor.vardagsrum_temperature
+    - type: sensor
+      name: Fukt
+      icon: mdi:water
+      entity: sensor.vardagsrum_humidity
   - type: custom:mini-media-player
     entity: media_player.vardagsrum
     name: Sonosen
+    icon: mdi:speaker-wireless
     hide_power: true
     show_source: true
     short_info: true
     consider_pause_idle: true
     idle_view: true
     sonos_grouping: !include sonos_grouping.yaml
-#    media_buttons: !include sonos_buttons.yaml
-  - type: media-control
+  - type: custom:mini-media-player
     entity: media_player.tv_vardagsrum
+    name: TV
+    icon: mdi:television
+    short_info: true
+    idle_view: true

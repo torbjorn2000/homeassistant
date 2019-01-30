@@ -4,8 +4,10 @@ cards:
   - type: entities
     title: Lampor
     entities:
-      - entity: light.gastbollen
-        name: Stora bollen
+      - type: custom:slider-entity-row
+        entity: light.gastbollen
+        toggle: true
+        icon: mdi:circle-outline
       - entity: light.gastbokhyllan
         name: Bokhyllan
       - entity: light.gastsoffan
@@ -14,6 +16,12 @@ cards:
         name: Fönstret
       - entity: light.guest_sideboard
         name: Skänken
+      - entity: media_player.gastrum
+      - type: custom:slider-entity-row
+        #icon: mdi:speaker-wireless
+        entity: media_player.gastrum
+        #toggle: true
+        full_row: true
   - type: entities
     title: Temperatur mm
     show_header_toggle: false
@@ -24,10 +32,13 @@ cards:
         name: Fukt
       - entity: sensor.white_temp_1_pressure
         name: Lufttryck
-  - type: entities
-    entities:
-    - entity: media_player.gastrum
-      type: "custom:mini-media-player"
-      show_source: true
-      name: Musikmaskin
-      hide_power: true
+  - type: custom:mini-media-player
+    entity: media_player.gastrum
+    name: Sonosen
+    icon: mdi:speaker-wireless
+    hide_power: true
+    show_source: true
+    short_info: true
+    consider_pause_idle: true
+    idle_view: true
+    sonos_grouping: !include sonos_grouping.yaml

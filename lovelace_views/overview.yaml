@@ -74,82 +74,96 @@ cards:
             action: turn_on
             data:
               entity_id: script.leaving_home
-    - type: "custom:button-card"
-      icon: mdi:account-plus
-      name: Gästrum
-      entity: light.gastrum
-      color: rgb(255, 255, 0)
-      style:
-        - text-transform: none
-        - font-weight: bold
-    - type: "custom:button-card"
-      icon: mdi:sofa
-      name: Vardagsrum
-      entity: light.vardagsrum
-      color: rgb(255, 255, 0)
-      style:
-        - text-transform: none
-        - font-weight: bold
-    - type: "custom:button-card"
-      icon: mdi:stove
-      name: Kök
-      entity: light.kok
-      color: rgb(255, 255, 0)
-      style:
-        - text-transform: none
-        - font-weight: bold
-    - type: "custom:button-card"
-      icon: mdi:hotel
-      name: Sovrum
-      entity: light.sovrum
-      color: rgb(255, 255, 0)
-      style:
-        - text-transform: none
-        - font-weight: bold
-    - type: "custom:button-card"
-      icon: mdi:door
-      name: Hall
-      entity: light.hall
-      color: rgb(255, 255, 0)
-      style:
-        - text-transform: none
-        - font-weight: bold
-    - type: "custom:button-card"
-      icon: mdi:flower-tulip
-      name: Blomlampor
-      entity: light.flowers
-      color: rgb(255, 255, 0)
-      style:
-        - text-transform: none
-        - font-weight: bold
+    - type: horizontal-stack
+      cards:
+      - type: "custom:button-card"
+        icon: mdi:account-plus
+        name: Gästrum
+        entity: light.gastrum
+        color: rgb(255, 255, 0)
+        style:
+          - text-transform: none
+          - font-weight: bold
+      - type: "custom:button-card"
+        icon: mdi:sofa
+        name: Vardagsrum
+        entity: light.vardagsrum
+        color: rgb(255, 255, 0)
+        style:
+          - text-transform: none
+          - font-weight: bold
+    - type: horizontal-stack
+      cards:
+      - type: "custom:button-card"
+        icon: mdi:stove
+        name: Kök
+        entity: light.kok
+        color: rgb(255, 255, 0)
+        style:
+          - text-transform: none
+          - font-weight: bold
+      - type: "custom:button-card"
+        icon: mdi:hotel
+        name: Sovrum
+        entity: light.sovrum
+        color: rgb(255, 255, 0)
+        style:
+          - text-transform: none
+          - font-weight: bold
+    - type: horizontal-stack
+      cards:
+      - type: "custom:button-card"
+        icon: mdi:door
+        name: Hall
+        entity: light.hall
+        color: rgb(255, 255, 0)
+        style:
+          - text-transform: none
+          - font-weight: bold
+      - type: "custom:button-card"
+        icon: mdi:flower-tulip
+        name: Blomlampor
+        entity: light.flowers
+        color: rgb(255, 255, 0)
+        style:
+          - text-transform: none
+          - font-weight: bold
   - type: entities
     title: Sonosar
     show_header_toggle: false
     entities:
-    - entity: media_player.kok
-      type: "custom:mini-media-player"
-      group: true
-      show_source: true
-      name: Kök
+    - type: custom:mini-media-player
+      entity: media_player.kok
       hide_power: true
-    - entity: media_player.gastrum
-      type: "custom:mini-media-player"
-      group: true
       show_source: true
-      name: Gästrum
+      short_info: true
+      consider_pause_idle: true
+      idle_view: true
+      sonos_grouping: !include sonos_grouping.yaml
+    - type: custom:mini-media-player
+      entity: media_player.vardagsrum
       hide_power: true
-    - entity: media_player.sovrum
-      type: "custom:mini-media-player"
-      group: true
       show_source: true
-      name: Sovrum
+      short_info: true
+      consider_pause_idle: true
+      idle_view: true
+      sonos_grouping: !include sonos_grouping.yaml
+    - type: custom:mini-media-player
+      entity: media_player.gastrum
       hide_power: true
-    - entity: media_player.vardagsrum
-      type: "custom:mini-media-player"
-      group: true
       show_source: true
-      name: Vardagsrum
+      short_info: true
+      consider_pause_idle: true
+      idle_view: true
+      sonos_grouping: !include sonos_grouping.yaml
+    - type: custom:mini-media-player
+      entity: media_player.sovrum
       hide_power: true
+      show_source: true
+      short_info: true
+      consider_pause_idle: true
+      idle_view: true
+      sonos_grouping: !include sonos_grouping.yaml
   - type: vertical-stack
     cards:
     - type: glance
