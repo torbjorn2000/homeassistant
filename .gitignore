@@ -4,7 +4,6 @@
 deps/
 tts
 node-red
-www
 pyozw.sqlite
 zwcfg*
 __pycache__/
