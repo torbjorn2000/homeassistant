@@ -82,9 +82,11 @@
     light.vardagsrum_mys:
       state: on
       brightness: 160
+      color_temp: 370
     light.fibaro_wall_dimmer_vardagsrum_taklampa:
       state: on
       brightness: 30
+      color_temp: 370
     light.gastrum:
       state: on
       brightness: 80

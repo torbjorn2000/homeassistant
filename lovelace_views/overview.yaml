@@ -44,10 +44,10 @@ cards:
             - font-weight: bold
           action: service
           service:
-            domain: scrit
+            domain: scene
             action: turn_on
             data:
-              entity_id: script.pers_morning
+              entity_id: scene.per_s_morning
         - type: "custom:button-card"
           icon: mdi:broom
           name: Städ
