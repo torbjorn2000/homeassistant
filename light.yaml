@@ -63,10 +63,10 @@
   entity_id: switch.telldus_plugin_switch_2
 - platform: switch
   name: Gästbokhyllan
-  entity_id: switch.gastbokhyllan
+  entity_id: switch.book_lamp
 - platform: switch
   name: Gästsoffan
-  entity_id: switch.gastsoffan
+  entity_id: switch.guest_sofa
 - platform: switch
   name: Guest window
   entity_id: switch.guest_window
