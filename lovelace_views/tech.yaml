@@ -2,27 +2,19 @@ title: tech
 id: tech
 icon: mdi:settings
 cards:
-  - type: gauge
-    name: CPU
-    entity: sensor.processor_use
-    severity:
-      green: 0
-      yellow: 50
-      red: 80
-  - type: gauge
-    name: Memory
-    entity: sensor.memory_use_percent
-    severity:
-      green: 0
-      yellow: 50
-      red: 80
-  - type: gauge
-    name: Disk
-    entity: sensor.disk_use_percent
-    severity:
-      green: 0
-      yellow: 45
-      red: 85
+  - type: entities
+    title: Host
+    show_header_toggle: false
+    entities:
+      - entity: sensor.processor_use
+        name: Processor
+        secondary_info: last-changed
+      - entity: sensor.memory_use_percent
+        name: Minne
+        secondary_info: last-changed
+      - entity: sensor.disk_use_percent
+        name: Disk
+        secondary_info: last-changed
   - type: entities
     title: Internet speed
     show_header_toggle: false
@@ -66,24 +58,6 @@ cards:
         name: Network map
         icon: 'mdi:graphql'
         url: /local/zigbee2mqtt_networkmap/map.html?engine=circo 
-      - type: section
-        label: Länkkvalitet
-      - entity: sensor.white_temp_1_linkquality
-        name: Vita temp 1
-        secondary_info: last-changed
-        icon: mdi:access-point
-      - entity: sensor.white_button_1_linkquality
-        name: Vita knappen 1
-        secondary_info: last-changed
-        icon: mdi:access-point
-      - entity: sensor.white_button_2_linkquality
-        name: Vita knappen 2
-        secondary_info: last-changed
-        icon: mdi:access-point
-      - entity: sensor.white_button_3_linkquality
-        name: Vita knappen 3
-        secondary_info: last-changed
-        icon: mdi:access-point
   - type: entities
     title: Batterier
     show_header_toggle: false

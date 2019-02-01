@@ -17,11 +17,6 @@ cards:
       - entity: light.guest_sideboard
         name: Skänken
       - entity: media_player.gastrum
-      - type: custom:slider-entity-row
-        #icon: mdi:speaker-wireless
-        entity: media_player.gastrum
-        #toggle: true
-        full_row: true
   - type: entities
     title: Temperatur mm
     show_header_toggle: false
