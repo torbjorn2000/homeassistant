@@ -8,7 +8,7 @@ resources:
     type: module
   - url: /local/tracker-card.js?v=0.2.0
     type: js
-  - url: /local/slider-entity-row.js?v=11
+  - url: /local/slider-entity-row.js?v=ba8f50
     type: module
   - url: /local/kiosk.js?v=1
     type: js
