@@ -96,8 +96,8 @@ history:
 logbook:
    exclude:
     domains:
-      sensor
-      switch
+      - sensor
+      - switch
 
 logger:
   default: debug
