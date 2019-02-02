@@ -5,8 +5,15 @@ cards:
     title: Lampor
     entities:
       - entity: light.turbanen
+        name: Turbanen
+        icon: mdi:chef-hat
       - entity: light.sanglamporna
+        name: Sänglamporna
+        icon: mdi:hotel
       - entity: light.bedroom_mirror
+        type: custom:slider-entity-row
+        toggle: true
+        icon: mdi: image-filter-frames
   - type: entities
     title: Temperatur
     show_header_toggle: false
@@ -15,11 +22,14 @@ cards:
         name: 'Temp'
       - entity: sensor.sovrum_humidity
         name: 'Fukt'
-  - type: entities
-    entities:
-    - entity: media_player.sovrum
-      type: "custom:mini-media-player"
-      show_source: true
-      name: Musikmaskin
-      hide_power: true
+  - type: custom:mini-media-player
+    entity: media_player.sovrum
+    name: Sonosen
+    icon: mdi:speaker-wireless
+    hide_power: true
+    show_source: true
+    short_info: true
+    consider_pause_idle: true
+    idle_view: true
+    sonos_grouping: !include sonos_grouping.yaml
       

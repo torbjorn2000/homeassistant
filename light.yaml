@@ -72,10 +72,10 @@
   entity_id: switch.guest_window
 - platform: switch
   name: Turbanen
-  entity_id: switch.turbanen    
+  entity_id: switch.turban
 - platform: switch
   name: Sänglamporna
-  entity_id: switch.sanglamporna    
+  entity_id: switch.bed_lamps
 - platform: switch
   name: Balkongen
   entity_id: switch.nexa_sovrum_3    
