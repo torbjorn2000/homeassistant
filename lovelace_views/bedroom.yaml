@@ -13,7 +13,7 @@ cards:
       - entity: light.bedroom_mirror
         type: custom:slider-entity-row
         toggle: true
-        icon: mdi: image-filter-frames
+        icon: mdi:image-filter-frames
   - type: entities
     title: Temperatur
     show_header_toggle: false
