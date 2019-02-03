@@ -153,9 +153,9 @@ device_tracker:
     host: 192.168.0.1
     track_new_devices: false
 
-tradfri:
-  host: 192.168.0.39
-  allow_tradfri_groups: false
+#tradfri:
+#  host: 192.168.0.39
+#  allow_tradfri_groups: false
 
 homekit:
   auto_start: false # Needed for zwave to wake up
