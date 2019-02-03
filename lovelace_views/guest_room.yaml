@@ -5,7 +5,7 @@ cards:
     title: Lampor
     entities:
       - type: custom:slider-entity-row
-        entity: light.gastbollen
+        entity: light.guest_ball
         toggle: true
         icon: mdi:circle-outline
       - entity: light.gastbokhyllan
@@ -14,7 +14,7 @@ cards:
         name: Soffan
       - entity: light.guest_window
         name: Fönstret
-      - entity: light.guest_sideboard
+      - entity: light.guest_side_board
         name: Skänken
       - entity: media_player.gastrum
   - type: entities

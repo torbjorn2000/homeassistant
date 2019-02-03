@@ -51,7 +51,7 @@
 
 - name: Flower lamps away
   entities:
-    light.hallblomma:
+    light.hallway_flower:
       state: on
       brightness: 255
     light.koksblomman:
@@ -60,7 +60,7 @@
 
 - name: Flower lamps home
   entities:
-    light.hallblomma:
+    light.hallway_flower:
       state: on
       brightness: 145
     light.koksblomman:

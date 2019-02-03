@@ -10,7 +10,7 @@ alexa:
       name: "Bedroom mirror"
 
     # Vardagsrum
-    light.kraftlampan:
+    light.crayfish_lamp:
       name: "Cray fish lamp"
     light.hanglamporna:
       name: "Hanging lamps"
@@ -24,7 +24,7 @@ alexa:
       name: "Living room flower lamp"
     light.fibaro_wall_dimmer_vardagsrum_taklampa:
       name: "Living room ceiling light"
-    light.baslampan:
+    light.base_lamp:
       name: "Base lamp"    
     light.living_room_window:
       name: Living room window
@@ -35,9 +35,9 @@ alexa:
       display_categories: 'TV'
 
     # Gästrum
-    light.guest_sideboard:
+    light.guest_side_board:
       name: "Guest side board"
-    light.gastbollen:
+    light.guest_ball:
       name: "Guest ball"
     light.gastsoffan:
       name: Guest sofa
@@ -63,7 +63,7 @@ alexa:
     # Hall
     light.hallbyran:
       name: "Granny lamp"
-    light.hallblomma:
+    light.hallway_flower:
       name: "Hallway flower lamp"
 
     # Misc

@@ -1,11 +1,11 @@
 - platform: group
   name: Vardagsrum mys
   entities:
-    - light.kraftlampan
+    - light.crayfish_lamp
     - light.garbage_lamp
     - light.living_room_flower
     - light.hanglamporna
-    - light.baslampan
+    - light.base_lamp
     - light.living_room_window
     - light.plexi_lamp
     - light.tv_banken
@@ -17,10 +17,10 @@
 - platform: group
   name: Gästrum
   entities:
-    - light.gastbollen
+    - light.guest_ball
     - light.gastbokhyllan
     - light.gastsoffan
-    - light.guest_sideboard
+    - light.guest_side_board
     - light.guest_window # Lilla bollen...
 - platform: group
   name: Kök
@@ -44,7 +44,7 @@
 - platform: group
   name: Flowers
   entities:
-    - light.hallblomma
+    - light.hallway_flower
     - light.koksblomman
 #- platform: switch
 #  name: Vardagsstjärnan

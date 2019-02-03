@@ -6,7 +6,7 @@ cozy_dozy:
 #    - service: scene.turn_on
 #      entity_id: scene.myslampor_vardagsrum
     - condition: state
-      entity_id: light.hallblomma
+      entity_id: light.hallway_flower
       state: 'on'
     - service: scene.turn_on
       entity_id: scene.flower_lamps_home
@@ -24,7 +24,7 @@ leaving_home:
     - service: scene.turn_on
       entity_id: scene.darkness
     - condition: state
-      entity_id: light.hallblomma
+      entity_id: light.hallway_flower
       state: 'on'
     - service: scene.turn_on
       entity_id: scene.flower_lamps_away

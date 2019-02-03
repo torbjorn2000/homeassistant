@@ -14,7 +14,7 @@ cards:
         toggle: true
       - type: custom:slider-entity-row
         icon: mdi:floor-lamp
-        entity: light.kraftlampan
+        entity: light.crayfish_lamp
         name: Kräftlampan
         toggle: true
       - type: custom:slider-entity-row
@@ -39,7 +39,7 @@ cards:
         toggle: true
       - type: custom:slider-entity-row
         icon: mdi:speaker-wireless
-        entity: light.baslampan
+        entity: light.base_lamp
         toggle: true
       - type: custom:slider-entity-row
         icon: mdi:television-box
