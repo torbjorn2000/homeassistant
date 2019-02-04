@@ -1,5 +1,6 @@
 .*
 *.log
+*.js
 *Log*
 deps/
 tts
@@ -7,6 +8,7 @@ node-red
 pyozw.sqlite
 zwcfg*
 __pycache__/
+www
 
 # Whitelist this 
 !.gitignore
@@ -16,4 +18,5 @@ ip_bans.yaml
 secrets.yaml
 known_devices.yaml
 home-assistant_v2*
+home-assistant_v2.db
 

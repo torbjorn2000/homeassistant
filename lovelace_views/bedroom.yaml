@@ -14,14 +14,15 @@ cards:
         type: custom:slider-entity-row
         toggle: true
         icon: mdi:image-filter-frames
-  - type: entities
-    title: Temperatur
-    show_header_toggle: false
-    entities:
-      - entity: sensor.sovrum_temperature
-        name: 'Temp'
-      - entity: sensor.sovrum_humidity
-        name: 'Fukt'
+  - type: horizontal-stack
+    cards:
+    - type: sensor
+      name: Temp
+      entity: sensor.sovrum_temperature
+    - type: sensor
+      name: Fukt
+      icon: mdi:water
+      entity: sensor.sovrum_humidity
   - type: custom:mini-media-player
     entity: media_player.sovrum
     name: Sonosen

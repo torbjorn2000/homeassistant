@@ -17,16 +17,16 @@ cards:
       - entity: light.guest_side_board
         name: Skänken
       - entity: media_player.gastrum
-  - type: entities
-    title: Temperatur mm
-    show_header_toggle: false
-    entities:
-      - entity: sensor.white_temp_1_temp
-        name: Temp
-      - entity: sensor.white_temp_1_humidity
-        name: Fukt
-      - entity: sensor.white_temp_1_pressure
-        name: Lufttryck
+  - type: horizontal-stack
+    cards:
+    - type: sensor
+      name: Temp
+      entity: sensor.white_temp_1_temp
+    - type: sensor
+      name: Fukt
+      entity: sensor.white_temp_1_humidity
+    - type: sensor
+      entity: sensor.white_temp_1_pressure
   - type: custom:mini-media-player
     entity: media_player.gastrum
     name: Sonosen

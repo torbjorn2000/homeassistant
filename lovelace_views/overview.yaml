@@ -137,6 +137,7 @@ cards:
       hide_power: true
       show_source: true
       short_info: true
+      group: true
       consider_pause_idle: true
       idle_view: true
       sonos_grouping: !include sonos_grouping.yaml
@@ -145,6 +146,7 @@ cards:
       hide_power: true
       show_source: true
       short_info: true
+      group: true
       consider_pause_idle: true
       idle_view: true
       sonos_grouping: !include sonos_grouping.yaml
@@ -153,6 +155,7 @@ cards:
       hide_power: true
       show_source: true
       short_info: true
+      group: true
       consider_pause_idle: true
       idle_view: true
       sonos_grouping: !include sonos_grouping.yaml
@@ -161,6 +164,7 @@ cards:
       hide_power: true
       show_source: true
       short_info: true
+      group: true
       consider_pause_idle: true
       idle_view: true
       sonos_grouping: !include sonos_grouping.yaml

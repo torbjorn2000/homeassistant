@@ -4,37 +4,50 @@ cards:
   - type: entities
     title: Lampor
     entities:
-      - light.kitchen_sink
+      - entity: light.kitchen_ceiling
+        type: custom:slider-entity-row
+        name: Taklampa
+        icon: mdi:ceiling-light
+        toggle: true
+      - entity: light.kitchen_sink
+        type: custom:slider-entity-row
+        icon: mdi:water-pump
+        toggle: true
       - entity: light.kitchen_sling
         name: Skåpslingan
-      - entity: light.kitchen_ceiling
-        name: Taklampa
       - entity: light.kitchen_window
         name: Köksfönstret
+        icon: mdi:owl
       - type: divider
-      - entity: light.koksblomman
+      - type: custom:slider-entity-row
         icon: mdi:flower-tulip
+        entity: light.koksblomman
         name: Hängblomman
       - type: divider
-      - light.butler_lamp
-  - type: entity-button
-    entity: light.koksblomman
-    icon: mdi:flower-tulip
-    name: Hängblomman
-  - type: entities
-    title: Temperatur
-    show_header_toggle: false
-    entities:
-      - entity: sensor.kok_temperature
-        name: 'Temp'
-      - entity: sensor.kok_humidity
-        name: 'Fukt'
-      - entity: sensor.garden_temperature
-        name: 'Gården'
-  - type: entities
-    entities:
-    - entity: media_player.kok
-      type: "custom:mini-media-player"
-      show_source: true
-      name: Musikmaskin
-      hide_power: true
+      - type: custom:slider-entity-row
+        icon: mdi:human-child
+        entity: light.butler_lamp
+  - type: horizontal-stack
+    cards:
+    - type: sensor
+      name: Temp
+      entity: sensor.kok_temperature
+    - type: sensor
+      name: Fukt
+      icon: mdi:water
+      entity: sensor.kok_humidity
+    - type: sensor
+      name: Balkongen
+      icon: mdi:weather-sunny
+      entity: sensor.garden_temperature
+  - type: custom:mini-media-player
+    entity: media_player.kok
+    name: Sonosen
+    icon: mdi:speaker-wireless
+    hide_power: true
+    show_source: true
+    short_info: true
+    consider_pause_idle: true
+    idle_view: true
+    sonos_grouping: !include sonos_grouping.yaml
+    

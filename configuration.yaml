@@ -110,13 +110,13 @@ logbook:
 logger:
   default: debug
   logs:
-    homeassistant.components.rfxtrx: debug
+    homeassistant.components.rfxtrx: info
     homeassistant.components.darksky: error
     homeassistant.components.discovery: error
     homeassistant.components.http.view: error
     homeassistant.components.device_tracker.linksys_smart: warn
     homeassistant.components.websocket_api.http.connection: info
-    libopenzwave: info
+    libopenzwave: debug
     pyhap.accessory_driver: info
     pyhap.characteristic: info
     pyhap.hap_server: error
@@ -150,8 +150,8 @@ notify:
     platform: pushbullet
     api_key: !secret pushbullet
 
-zwave:
-  usb_path: /dev/ttyACM1
+#zwave:
+#  usb_path: /dev/ttyACM1
 
 rfxtrx:                
   device: /dev/ttyUSB1
