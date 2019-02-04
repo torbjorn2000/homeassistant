@@ -52,7 +52,15 @@ custom_updater:
     - https://raw.githubusercontent.com/kuuji/button-card/master/tracker.json
     - https://raw.githubusercontent.com/kalkih/mini-media-player/master/tracker.json
 
+webhook:
+ 
+zigbee2mqtt_networkmap:
+ 
 panel_iframe:
+  networkmap:
+    title: 'Zigbee Map'
+    url: '/local/zigbee2mqtt_networkmap/map.html?engine=circo '
+    icon: 'mdi:graphql'
   nodered:
     title: 'Node-RED'
     icon: mdi:shuffle-variant
@@ -76,16 +84,28 @@ discovery:
     - logitech_mediaserver
     - plex_mediaserver
 
+mqtt:
+  discovery: true
+  broker: mqtt://localhost:1883
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
 
 recorder:
-  purge_keep_days: 14
-  db_url: !secret maria_db_log
+  purge_keep_days: 1
 
 # Enables support for tracking state changes over time
 history:
 
 # View all events in a logbook
 logbook:
+   exclude:
+    domains:
+      - sensor
+      - switch
 
 logger:
   default: debug
@@ -100,6 +120,7 @@ logger:
     pyhap.accessory_driver: info
     pyhap.characteristic: info
     pyhap.hap_server: error
+    async_upnp_client.traffic: info
 
 
 binary_sensor:
@@ -141,9 +162,9 @@ device_tracker:
     host: 192.168.0.1
     track_new_devices: false
 
-tradfri:
-  host: 192.168.0.39
-  allow_tradfri_groups: false
+#tradfri:
+#  host: 192.168.0.39
+#  allow_tradfri_groups: false
 
 homekit:
   auto_start: false # Needed for zwave to wake up
@@ -165,6 +186,12 @@ homekit:
       - light.kok
       - light.hall
       - light.sovrum
+      - light.flowers
+      - light.opal_1
+      - light.opal_2
+      - light.opal_3
+      - light.balkongen
+      - light.vardagsblomman
       - sensor.yr_symbol
       - sensor.yr_temperature
       - binary_sensor.brand
@@ -183,3 +210,5 @@ timer:
   zigbee_permit_join:
     name: Time remaining
     duration: 600 # Updated this to the number of seconds you wish
+
+

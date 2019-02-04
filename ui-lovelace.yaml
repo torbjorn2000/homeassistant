@@ -6,7 +6,11 @@ title: Home
 resources:
   - url: /local/button-card.js?v=0.0.5
     type: module
-  - url: /local/tracker-card.js?v=0.1.5
+  - url: /local/tracker-card.js?v=0.2.0
+    type: js
+  - url: /local/slider-entity-row.js?v=ba8f50
+    type: module
+  - url: /local/kiosk.js?v=1
     type: js
   - url: /local/mini-media-player-bundle.js?v=0.9.8
     type: module

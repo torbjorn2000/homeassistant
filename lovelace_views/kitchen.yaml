@@ -4,11 +4,13 @@ cards:
   - type: entities
     title: Lampor
     entities:
-      - light.koksbank
-      - light.kitchen_sling
+      - light.kitchen_sink
+      - entity: light.kitchen_sling
+        name: Skåpslingan
       - entity: light.kitchen_ceiling
         name: Taklampa
-      #- light.koksstjarnan
+      - entity: light.kitchen_window
+        name: Köksfönstret
       - type: divider
       - entity: light.koksblomman
         icon: mdi:flower-tulip

@@ -1,14 +1,3 @@
-#ights_away:
-# alias: "Lights when away"
-# sequence:
-#   - service: scene.turn_on
-#     entity_id: scene.darkness
-#   - condition: state
-#     entity_id: light.hallblomma
-#     state: 'on'
-#   - service: scene.turn_on
-#     entity_id: scene.flower_lamps_away
-
 cozy_dozy:
   alias: "Cozy dozy"
   sequence:
@@ -17,18 +6,10 @@ cozy_dozy:
 #    - service: scene.turn_on
 #      entity_id: scene.myslampor_vardagsrum
     - condition: state
-      entity_id: light.hallblomma
+      entity_id: light.hall_flower
       state: 'on'
     - service: scene.turn_on
       entity_id: scene.flower_lamps_home
-
-#pers_morning:
-#  alias: "Per's morning"
-#  sequence:
-#    - service: scene.turn_on
-#      entity_id: scene.myslampor_vardagsrum
-#    - service: scene.turn_on
-#      entity_id: scene.pers_morning
     
 leaving_home:
   alias: "Leaving home"
@@ -43,10 +24,15 @@ leaving_home:
     - service: scene.turn_on
       entity_id: scene.darkness
     - condition: state
-      entity_id: light.hallblomma
+      entity_id: light.hall_flower
       state: 'on'
     - service: scene.turn_on
       entity_id: scene.flower_lamps_away
+
+update_zigbee_nerwork_map:
+  alias: Update Zigbee network map
+  sequence:
+    - service: zigbee2mqtt_networkmap.update
 
 p1_vardagsrummet:
   alias: "P1 in the living room"

@@ -6,9 +6,11 @@ alexa:
       name: "Bed lamps"
     light.turbanen:
       name: "Turban"
+    light.bedroom_mirror:
+      name: "Bedroom mirror"
 
     # Vardagsrum
-    light.kraftlampan:
+    light.crayfish_lamp:
       name: "Cray fish lamp"
     light.hanglamporna:
       name: "Hanging lamps"
@@ -18,11 +20,11 @@ alexa:
       name: "Plexi corner"
     light.garbage_lamp:
       name: "Garbage lamp"
-    light.vardagsblomma:
+    light.living_room_flower:
       name: "Living room flower lamp"
     light.fibaro_wall_dimmer_vardagsrum_taklampa:
       name: "Living room ceiling light"
-    light.baslampan:
+    light.base_lamp:
       name: "Base lamp"    
     light.living_room_window:
       name: Living room window
@@ -33,9 +35,9 @@ alexa:
       display_categories: 'TV'
 
     # Gästrum
-    light.guest_sideboard:
+    light.guest_side_board:
       name: "Guest side board"
-    light.gastbollen:
+    light.guest_ball:
       name: "Guest ball"
     light.gastsoffan:
       name: Guest sofa
@@ -47,7 +49,7 @@ alexa:
     # Kök
     light.koksstjarnan:
       name: "Kitchen star"
-    light.koksbank:
+    light.kitchen_sink:
       name: "Sink lamp"
     light.kitchen_sling:
       name: "Kitchen sling"
@@ -61,7 +63,7 @@ alexa:
     # Hall
     light.hallbyran:
       name: "Granny lamp"
-    light.hallblomma:
+    light.hall_flower:
       name: "Hallway flower lamp"
 
     # Misc

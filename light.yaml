@@ -1,11 +1,11 @@
 - platform: group
   name: Vardagsrum mys
   entities:
-    - light.kraftlampan
+    - light.crayfish_lamp
     - light.garbage_lamp
-    - light.vardagsblomma
+    - light.living_room_flower
     - light.hanglamporna
-    - light.baslampan
+    - light.base_lamp
     - light.living_room_window
     - light.plexi_lamp
     - light.tv_banken
@@ -17,19 +17,20 @@
 - platform: group
   name: Gästrum
   entities:
-    - light.gastbollen
+    - light.guest_ball
     - light.gastbokhyllan
     - light.gastsoffan
-    - light.guest_sideboard
+    - light.guest_side_board
     - light.guest_window # Lilla bollen...
 - platform: group
   name: Kök
   entities:
-    - light.koksbank
+    - light.kitchen_sink
     - light.kitchen_sling
     - light.butler_lamp
     - light.koksstjarnan
     - light.kitchen_ceiling
+    - light.kitchen_window
 - platform: group
   name: Hall
   entities:
@@ -39,17 +40,21 @@
   entities:
     - light.turbanen
     - light.sanglamporna
+    - light.bedroom_mirror
 - platform: group
   name: Flowers
   entities:
-    - light.hallblomma
+    - light.hall_flower
     - light.koksblomman
-- platform: switch
-  name: Vardagsstjärnan
-  entity_id: switch.nexa_remote_31
+#- platform: switch
+#  name: Vardagsstjärnan
+# entity_id: switch.nexa_remote_31
 - platform: switch
   name: Kitchen sling
-  entity_id: switch.nexa_remote_23
+  entity_id: switch.kitchen_sling
+- platform: switch
+  name: Kitchen window
+  entity_id: switch.kitchen_window
 - platform: switch
   name: Hallbyrån
   entity_id: switch.telldus_plugin_switch_1
@@ -58,22 +63,22 @@
   entity_id: switch.telldus_plugin_switch_2
 - platform: switch
   name: Gästbokhyllan
-  entity_id: switch.gastbokhyllan
+  entity_id: switch.book_lamp
 - platform: switch
   name: Gästsoffan
-  entity_id: switch.gastsoffan
+  entity_id: switch.guest_sofa
 - platform: switch
   name: Guest window
   entity_id: switch.guest_window
 - platform: switch
   name: Turbanen
-  entity_id: switch.turbanen    
+  entity_id: switch.turban
 - platform: switch
   name: Sänglamporna
-  entity_id: switch.sanglamporna    
+  entity_id: switch.bed_lamps
 - platform: switch
   name: Balkongen
   entity_id: switch.nexa_sovrum_3    
-- platform: switch
-  name: Julgranen
-  entity_id: switch.nexa_vrum_2
+#- platform: switch
+#  name: Julgranen
+#  entity_id: switch.nexa_vrum_2
