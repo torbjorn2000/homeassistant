@@ -4,7 +4,6 @@
 deps/
 tts
 node-red
-www
 pyozw.sqlite
 zwcfg*
 __pycache__/
@@ -16,3 +15,5 @@ __pycache__/
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
+home-assistant_v2.db
+
