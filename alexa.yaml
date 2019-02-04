@@ -64,7 +64,7 @@ alexa:
     light.hallbyran:
       name: "Granny lamp"
     light.hall_flower:
-    light.hallway_flower:
+      name: Hall flower
 
     # Misc
     light.balkongen:

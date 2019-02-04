@@ -36,9 +36,11 @@
     # Lilla vit i sovrummet
     ####################################
     0b11000000e63cd601000070:
-      name: Sänglamporna
+      name: nexa_sovrum_1
+      fire_event: true
     0b11000200e63cd602000070:
-      name: Turbanen
+      name: nexa_sovrum_2
+      fire_event: true
     0b11000600e63cd603010f60: # Balkong
       name: nexa_sovrum_3
       fire_event: true

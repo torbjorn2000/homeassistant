@@ -110,7 +110,7 @@ logbook:
 logger:
   default: debug
   logs:
-    homeassistant.components.rfxtrx: info
+    homeassistant.components.rfxtrx: debug
     homeassistant.components.darksky: error
     homeassistant.components.discovery: error
     homeassistant.components.http.view: error
@@ -210,5 +210,16 @@ timer:
   zigbee_permit_join:
     name: Time remaining
     duration: 600 # Updated this to the number of seconds you wish
+
+input_select:
+  zigbee2mqtt_log_level:
+    name: Zigbee2mqtt Log Level
+    options:
+     - debug
+     - info
+     - warn
+     - error
+    initial: info
+    icon: mdi:format-list-bulleted
 
 
