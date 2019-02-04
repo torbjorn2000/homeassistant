@@ -6,9 +6,9 @@ deps/
 tts
 node-red
 pyozw.sqlite
-zwcfg*
+zw*
 __pycache__/
-www
+www/**
 
 # Whitelist this 
 !.gitignore
