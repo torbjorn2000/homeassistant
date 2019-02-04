@@ -1,6 +1,0 @@
-zwave.zwaveme_zme_uzb1_usb_stick:
-  ignored: false
-  polling_intensity: 1
-zwave._:
-  ignored: false
-  polling_intensity: 1
