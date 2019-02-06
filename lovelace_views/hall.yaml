@@ -6,5 +6,7 @@ cards:
     entities:
       - light.hallbyran
       - type: divider
-      - entity: light.hall_flower
+      - type: custom:slider-entity-row
+        entity: light.hall_flower
         icon: mdi:flower-tulip
+        toggle: true

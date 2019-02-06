@@ -108,20 +108,18 @@ logbook:
       - switch
 
 logger:
-  default: debug
+  default: info
   logs:
     homeassistant.components.rfxtrx: info
-    homeassistant.components.darksky: error
     homeassistant.components.discovery: error
     homeassistant.components.http.view: error
     homeassistant.components.device_tracker.linksys_smart: warn
     homeassistant.components.websocket_api.http.connection: info
-    libopenzwave: debug
+    homeassistant.components.mqtt: debug
     pyhap.accessory_driver: info
     pyhap.characteristic: info
     pyhap.hap_server: error
     async_upnp_client.traffic: info
-
 
 binary_sensor:
   platform: rfxtrx

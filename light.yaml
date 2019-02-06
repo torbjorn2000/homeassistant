@@ -4,10 +4,10 @@
     - light.crayfish_lamp
     - light.garbage_lamp
     - light.living_room_flower
-    - light.hanglamporna
     - light.base_lamp
     - light.living_room_window
     - light.plexi_lamp
+    - light.hanglamporna
     - light.tv_banken
 - platform: group
   name: Vardagsrum
@@ -21,14 +21,13 @@
     - light.gastbokhyllan
     - light.gastsoffan
     - light.guest_side_board
-    - light.guest_window # Lilla bollen...
+    - light.guest_window 
 - platform: group
   name: Kök
   entities:
     - light.kitchen_sink
     - light.kitchen_sling
     - light.butler_lamp
-    - light.koksstjarnan
     - light.kitchen_ceiling
     - light.kitchen_window
 - platform: group
