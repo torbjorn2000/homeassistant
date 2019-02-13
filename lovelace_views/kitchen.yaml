@@ -9,7 +9,7 @@ cards:
         name: Taklampa
         icon: mdi:ceiling-light
         toggle: true
-      - entity: light.kitchen_sink
+      - entity: light.koksbanken
         type: custom:slider-entity-row
         icon: mdi:water-pump
         toggle: true
@@ -31,15 +31,14 @@ cards:
     cards:
     - type: sensor
       name: Temp
-      entity: sensor.kok_temperature
+      entity: sensor.kitchen_temperature
     - type: sensor
       name: Fukt
-      icon: mdi:water
-      entity: sensor.kok_humidity
+      entity: sensor.kitchen_humidity
     - type: sensor
       name: Balkongen
       icon: mdi:weather-sunny
-      entity: sensor.garden_temperature
+      entity: sensor.garden_temperatur
   - type: custom:mini-media-player
     entity: media_player.kok
     name: Sonosen
@@ -50,4 +49,3 @@ cards:
     consider_pause_idle: true
     idle_view: true
     sonos_grouping: !include sonos_grouping.yaml
-    

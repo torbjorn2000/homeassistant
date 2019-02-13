@@ -1,27 +1,9 @@
 - name: Cozy dozy
   entities:
-    light.vardagsrum_mys:
-      state: on
-      brightness_pct: 60
-      color_temp: 370
+    light.cozy_dozy: on
     light.fibaro_wall_dimmer_vardagsrum_taklampa:
       state: on
       brightness_pct: 10
-    light.gastrum:
-      state: on
-      brightness: 80
-      color_temp: 370
-    light.hall: on
-    light.kok:
-      state: on
-      brightness_pct: 80
-      color_temp: 370
-    light.kitchen_ceiling: 
-      state: on
-      brightness_pct: 30
-    light.sovrum: 
-      state: on
-      brightness_pct: 50
     input_boolean.myslampor_vardagsrum : on
     input_boolean.cozy_dozy: on
     
@@ -29,17 +11,47 @@
   entities:
     light.vardagsrum_mys:
       state: on
-      brightness: 160
+      brightness_pct: 60
     input_boolean.myslampor_vardagsrum : on
     input_boolean.cozy_dozy: on
+  
+- name: Darkness
+  entities:
+    light.cozy_dozy: off
+    light.fibaro_wall_dimmer_vardagsrum_taklampa: off
+    input_boolean.myslampor_vardagsrum : off
+    input_boolean.cozy_dozy: off
+    input_booelan.pers_morning: off
+    input_booelan.cleaning: off
+
+- name: Per's morning
+  entities:
+    light.vardagsrum_mys:
+      state: on
+      brightness: 160
+      color_temp: 370
+    light.fibaro_wall_dimmer_vardagsrum_taklampa:
+      state: on
+      brightness_pct: 10
+    light.gastrum: on
+    light.hall: on
+    light.balkongen: on 
+    light.kok: on
+    input_boolean.cozy_dozy: on
+    input_boolean.myslampor_vardagsrum : on
+    input_booelan.pers_morning: on
 
 - name: Cleaning
   entities:
-    group.all_lights:
+    light.cozy_dozy: 
+      state: on
+      brightness_pct: 100
+    light.fibaro_wall_dimmer_vardagsrum_taklampa:
       state: on
       brightness_pct: 100
     input_boolean.myslampor_vardagsrum : on
     input_boolean.cozy_dozy: on
+    input_booelan.cleaning: on
 
 - name: Movie mode
   entities:
@@ -66,36 +78,3 @@
     light.koksblomman:
       state: on
       brightness: 178
-  
-- name: Darkness
-  entities:
-    light.vardagsrum: off
-    light.gastrum: off
-    light.hall: off
-    light.sovrum: off
-    light.kok: off
-    input_boolean.myslampor_vardagsrum : off
-    input_boolean.cozy_dozy: off
-
-- name: Per's morning
-  entities:
-    light.vardagsrum_mys:
-      state: on
-      brightness: 160
-      color_temp: 370
-    light.fibaro_wall_dimmer_vardagsrum_taklampa:
-      state: on
-      brightness: 30
-      color_temp: 370
-    light.gastrum:
-      state: on
-      brightness: 80
-      color_temp: 370
-    light.hall: on
-    light.balkongen: on 
-    light.kok:
-      state: on
-      brightness_pct: 80
-      color_temp: 370
-    input_boolean.cozy_dozy: on
-    input_boolean.myslampor_vardagsrum : on

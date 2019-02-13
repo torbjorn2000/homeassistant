@@ -1,13 +1,24 @@
 - platform: group
+  name: Cozy dozy
+  entities:
+    - light.cozy_dozy_zb
+    - light.hanglamporna
+    - light.tv_banken
+    - light.guest_room_ikea
+    - light.kitchen_ikea
+    - light.hallbyran
+    - light.bedroom_ikea
+- platform: group
   name: Vardagsrum mys
   entities:
-    - light.crayfish_lamp
-    - light.garbage_lamp
-    - light.living_room_flower
+    - light.living_room_zb
+#    - light.crayfish_lamp
+#    - light.garbage_lamp
+#    - light.living_room_flower
+#    - light.base_lamp
+#    - light.living_room_window
+#    - light.plexi_lamp
     - light.hanglamporna
-    - light.base_lamp
-    - light.living_room_window
-    - light.plexi_lamp
     - light.tv_banken
 - platform: group
   name: Vardagsrum
@@ -17,20 +28,23 @@
 - platform: group
   name: Gästrum
   entities:
-    - light.guest_ball
-    - light.gastbokhyllan
-    - light.gastsoffan
-    - light.guest_side_board
-    - light.guest_window # Lilla bollen...
+    - light.guest_room_zb
+    - light.guest_room_ikea
+#    - light.guest_ball
+#    - light.gastbokhyllan
+#    - light.gastsoffan
+#    - light.guest_side_board
+#    - light.guest_window 
 - platform: group
   name: Kök
   entities:
-    - light.kitchen_sink
-    - light.kitchen_sling
-    - light.butler_lamp
-    - light.koksstjarnan
-    - light.kitchen_ceiling
-    - light.kitchen_window
+    - light.kitchen_zb
+    - light.kitchen_ikea
+#    - light.koksbanken
+#    - light.kitchen_sling
+#    - light.kitchen_window
+#    - light.butler_lamp
+#    - light.kitchen_ceiling
 - platform: group
   name: Hall
   entities:
@@ -38,9 +52,10 @@
 - platform: group
   name: Sovrum
   entities:
-    - light.turbanen
-    - light.sanglamporna
-    - light.bedroom_mirror
+     - light.bedroom_ikea
+#    - light.turbanen
+#    - light.sanglamporna
+     - light.bedroom_mirror
 - platform: group
   name: Flowers
   entities:
@@ -51,10 +66,10 @@
 # entity_id: switch.nexa_remote_31
 - platform: switch
   name: Kitchen sling
-  entity_id: switch.kitchen_sling
+  entity_id: switch.slingan
 - platform: switch
   name: Kitchen window
-  entity_id: switch.kitchen_window
+  entity_id: switch.ugglan
 - platform: switch
   name: Hallbyrån
   entity_id: switch.telldus_plugin_switch_1
@@ -63,22 +78,52 @@
   entity_id: switch.telldus_plugin_switch_2
 - platform: switch
   name: Gästbokhyllan
-  entity_id: switch.book_lamp
+  entity_id: switch.bokuttaget
 - platform: switch
   name: Gästsoffan
-  entity_id: switch.guest_sofa
+  entity_id: switch.soffuttaget
 - platform: switch
   name: Guest window
-  entity_id: switch.guest_window
+  entity_id: switch.fonsteruttaget
 - platform: switch
   name: Turbanen
-  entity_id: switch.turban
+  entity_id: switch.turbankontakt
 - platform: switch
   name: Sänglamporna
-  entity_id: switch.bed_lamps
+  entity_id: switch.sangkontakt
 - platform: switch
   name: Balkongen
   entity_id: switch.nexa_sovrum_3    
-#- platform: switch
-#  name: Julgranen
-#  entity_id: switch.nexa_vrum_2
+
+- platform: mqtt
+  schema: json
+  name: Living room ZB
+  command_topic: "zigbee2mqtt/living_room/set"
+  state_topic: "zigbee2mqtt/living_room/set"
+  color_temp: false
+  brightness: true
+  rgb: false
+- platform: mqtt
+  schema: json
+  name: Guest room ZB
+  command_topic: "zigbee2mqtt/guest_room/set"
+  state_topic: "zigbee2mqtt/guest_room/set"
+  color_temp: false
+  brightness: true
+  rgb: false
+- platform: mqtt
+  schema: json
+  name: Kitchen ZB
+  command_topic: "zigbee2mqtt/kitchen/set"
+  state_topic: "zigbee2mqtt/kitchen/set"
+  color_temp: false
+  brightness: true
+  rgb: false
+- platform: mqtt
+  schema: json
+  name: Cozy Dozy ZB
+  command_topic: "zigbee2mqtt/cozy_dozy/set"
+  state_topic: "zigbee2mqtt/cozy_dozy/set"
+  color_temp: false
+  brightness: true
+  rgb: false

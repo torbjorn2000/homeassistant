@@ -54,11 +54,10 @@ cards:
     cards:
     - type: sensor
       name: Temp
-      entity: sensor.vardagsrum_temperature
+      entity: sensor.living_room_temperature
     - type: sensor
       name: Fukt
-      icon: mdi:water
-      entity: sensor.vardagsrum_humidity
+      entity: sensor.living_room_humidity
   - type: custom:mini-media-player
     entity: media_player.vardagsrum
     name: Sonosen

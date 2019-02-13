@@ -66,23 +66,17 @@ cards:
       - entity: sensor.white_temp_1_battery
         name: Termometer gästrum
         icon: mdi:battery-70
-      - entity: sensor.sovrum_temp_batt
+      - entity: sensor.bedroom
         name: Termometer sovrum
-        icon: mdi:battery-70
-      - entity: sensor.kok_temp_batt
+      - entity: sensor.kitchen_thermometer_battery
         name: Termometer kök
-        icon: mdi:battery-70
-      - entity: sensor.vardagsrum_temp_batt
+      - entity: sensor.living_room_thermometer_battery
         name: Termometer vardagsrum
-        icon: mdi:battery-70
       - entity: sensor.perryberry_battery
         icon: mdi:battery-70
       - entity: sensor.softgreen_battery
         icon: mdi:battery-70
-      - entity: sensor.stora_vita
-        icon: mdi:battery-70
-        name: Trådfri stora vita
-      - entity: sensor.vita_dimmern
+      - entity: sensor.dimmer_white_battery
         icon: mdi:battery-70
         name: Trådfri vita (Bänk kök)
       - entity: sensor.dimmer_yellow_battery

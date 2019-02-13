@@ -172,11 +172,11 @@ cards:
     cards:
     - type: glance
       entities:
-        - entity: sensor.sovrum_temperature
+        - entity: sensor.bedroom_temperature
           name: Sovrum
-        - entity: sensor.kok_temperature
+        - entity: sensor.kitchen_temperature
           name: Kök
-        - entity: sensor.vardagsrum_temperature
+        - entity: sensor.living_room_temperature
           name: Vardagsrum
         - entity: sensor.white_temp_1_temp
           name: Gästrum

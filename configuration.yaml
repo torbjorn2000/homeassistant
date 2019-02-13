@@ -25,7 +25,7 @@ zone:
     radius: 100
     icon: mdi:worker
 
-switch: !include switch.yaml
+#switch: !include switch.yaml
 light: !include light.yaml
 automation: !include_dir_merge_list automations/
 scene: !include scenes.yaml
@@ -64,7 +64,7 @@ panel_iframe:
   nodered:
     title: 'Node-RED'
     icon: mdi:shuffle-variant
-    url: http://hassio3.local:1880
+    url: http://hallon.local:1880
 
 panel_custom:
   - name: zwavegraph2
@@ -74,6 +74,8 @@ panel_custom:
 
 # Enables configuration UI
 config:
+
+system_health:
 
 http:
   api_password: !secret http_password
@@ -86,7 +88,7 @@ discovery:
 
 mqtt:
   discovery: true
-  broker: mqtt://localhost:1883
+  broker: mqtt://192.168.0.62:1883
   birth_message:
     topic: 'hass/status'
     payload: 'online'
@@ -94,8 +96,16 @@ mqtt:
     topic: 'hass/status'
     payload: 'offline'
 
+zwave:
+  usb_path: /dev/ttyACM1
+
+tradfri:
+  host: 192.168.0.39
+  allow_tradfri_groups: true
+
 recorder:
-  purge_keep_days: 1
+  purge_keep_days: 14
+  db_url: mysql://hallon:rh5ny6@192.168.0.23/hallon
 
 # Enables support for tracking state changes over time
 history:
@@ -110,28 +120,30 @@ logbook:
 logger:
   default: debug
   logs:
-    homeassistant.components.rfxtrx: info
-    homeassistant.components.darksky: error
     homeassistant.components.discovery: error
     homeassistant.components.http.view: error
     homeassistant.components.device_tracker.linksys_smart: warn
     homeassistant.components.websocket_api.http.connection: info
-    libopenzwave: debug
+    homeassistant.components.mqtt: debug
+    homeassistant.components.zwave.util: info
+    openzwave: info
+    libopenzwave: info
     pyhap.accessory_driver: info
     pyhap.characteristic: info
     pyhap.hap_server: error
     async_upnp_client.traffic: info
+    coap: info
+    pytradfri.api.aiocoap_api: info
 
-
-binary_sensor:
-  platform: rfxtrx
-  devices:
-    082003052f15000670:
-      name: Brand
-      fire_event: true 
-      device_class: smoke
-      off_delay:
-        minutes: 5
+#binary_sensor:
+#  platform: rfxtrx
+#  devices:
+#    082003052f15000670:
+#      name: Brand
+#      fire_event: true 
+#      device_class: smoke
+#      off_delay:
+#        minutes: 5
       
 media_player:
   - platform: sonos
@@ -150,21 +162,10 @@ notify:
     platform: pushbullet
     api_key: !secret pushbullet
 
-#zwave:
-#  usb_path: /dev/ttyACM1
-
-rfxtrx:                
-  device: /dev/ttyUSB1
-  debug: false
-
-device_tracker:
-  - platform: linksys_smart
-    host: 192.168.0.1
-    track_new_devices: false
-
-#tradfri:
-#  host: 192.168.0.39
-#  allow_tradfri_groups: false
+#device_tracker:
+#  - platform: linksys_smart
+#    host: 192.168.0.1
+#    track_new_devices: false
 
 homekit:
   auto_start: false # Needed for zwave to wake up
@@ -187,18 +188,29 @@ homekit:
       - light.hall
       - light.sovrum
       - light.flowers
-      - light.opal_1
-      - light.opal_2
-      - light.opal_3
       - light.balkongen
-      - light.vardagsblomman
-      - sensor.yr_symbol
-      - sensor.yr_temperature
+      - light.cozy_dozy
+      - light.cozy_dozy_zb
+      - light.living_room_zb
+      - light.guest_room_zb
+      - light.guest_room_ikea
+      - light.kitchen_zb
+      - light.kitchen_ikea
+      - light.bedroom_ikea
+      - light.kitchen_sink_light
       - binary_sensor.brand
+    include_entities:
+      - script.cozy_dozy
+      - scene.per_s_morning
+      - scene.darkness
+      - scene.cleaning
+      - script.leaving_home
 
 input_boolean:
   myslampor_vardagsrum:
-  cozy_dozy:  
+  cozy_dozy:
+  pers_morning:
+  cleaning:
   tobbe_morning_alarm:
     name: Tobbe morgonlarm
   zigbee_permit_join:

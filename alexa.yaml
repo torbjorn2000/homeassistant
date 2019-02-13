@@ -75,11 +75,9 @@ alexa:
       - light
     include_entities:
       - media_player.tv_vardagsrum
-      - script.shut_down_media
-      - script.lights_away
+      - script.leaving_home
       - script.cozy_dozy
-      - script.pers_morning
-      - script.p1_vardagsrummet
+      - scene.per_s_morning
       - scene.darkness
       - scene.movie_mode
     exclude_domains:
@@ -88,5 +86,21 @@ alexa:
       - scene
       - switch
     exclude_entities:
+      - light.vardagsrum
       - light.vardagsrum_mys_dimbara
+      - light.vardagsrum_mys
       - light.fibaro_wall_dimmer_vardagsrum_myslampor
+      - light.cozy_dozy_zb
+      - light.cozy_dozy
+      - light.flowers
+      - light.guest_room_zb
+      - light.gastrum
+      - light.guest_room_ikea
+      - light.hall
+      - light.kitchen_zb
+      - light.kitchen_sink_light
+      - light.kok
+      - light.kitchen_ikea
+      - light.living_room_zb
+      - light.sovrum
+      - light.bedroom_ikea
