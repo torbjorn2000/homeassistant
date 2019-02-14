@@ -6,6 +6,27 @@
       brightness_pct: 10
     input_boolean.myslampor_vardagsrum : on
     input_boolean.cozy_dozy: on
+
+- name: Set dim level
+  entities:
+    light.cozy_dozy_zb:
+      state: on
+      brightness_pct: 60
+      color_temp: 370
+    light.hanglamporna:
+      state: on
+      brightness_pct: 60
+    light.kitchen_ceiling:
+      state: on
+      brightness_pct: 30
+      color_temp: 370
+    light.guest_ball:
+      state: on
+      brightness_pct: 30
+      color_temp: 370
+    light.bedroom_mirror:
+      state: on
+      brightness_pct: 30
     
 - name: Myslampor vardagsrum
   entities:
