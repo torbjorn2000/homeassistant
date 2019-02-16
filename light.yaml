@@ -77,6 +77,9 @@
   name: TV-Bänken
   entity_id: switch.telldus_plugin_switch_2
 - platform: switch
+  name: Hänglamporna
+  entity_id: switch.hanging_lamps
+- platform: switch
   name: Gästbokhyllan
   entity_id: switch.bokuttaget
 - platform: switch
