@@ -40,7 +40,7 @@
   entities:
     - light.kitchen_zb
     - light.kitchen_ikea
-#    - light.koksbanken
+    - light.koksbanken
 #    - light.kitchen_sling
 #    - light.kitchen_window
 #    - light.butler_lamp
