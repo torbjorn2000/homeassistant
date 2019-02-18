@@ -196,8 +196,9 @@ homekit:
       - light.guest_room_ikea
       - light.kitchen_zb
       - light.kitchen_ikea
+      - light.kitchen_sink_ikea 
       - light.bedroom_ikea
-      - light.kitchen_sink_light
+      - light.tkb_dimmer_1
       - binary_sensor.brand
     include_entities:
       - script.cozy_dozy
