@@ -6,6 +6,7 @@
     - light.tv_banken
     - light.guest_room_ikea
     - light.kitchen_ikea
+    - light.koksbanken
     - light.hallbyran
     - light.bedroom_ikea
 - platform: group
