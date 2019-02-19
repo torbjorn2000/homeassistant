@@ -77,9 +77,9 @@ cards:
         icon: mdi:battery-70
       - entity: sensor.softgreen_battery
         icon: mdi:battery-70
-      - entity: sensor.dimmer_white_battery
+      - entity: sensor.vita_dimmern
         icon: mdi:battery-70
-        name: Trådfri vita (Bänk kök)
+        name: Trådfri vita (Köksbänk)
       - entity: sensor.dimmer_yellow_battery
         icon: mdi:battery-70
         name: Trådfri gula (Taklampa kök)
@@ -91,6 +91,12 @@ cards:
         icon: mdi:battery-70
       - entity: sensor.white_button_3_battery
         name: Vita knappen 3
+        icon: mdi:battery-70
+      - entity: sensor.double_button_battery
+        name: Dubbelknappen
+        icon: mdi:battery-70
+      - entity: sensor.white_motion_battery
+        name: Vita rörelsen batteri
         icon: mdi:battery-70
   - type: custom:tracker-card
     title:

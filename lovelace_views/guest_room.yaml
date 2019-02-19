@@ -27,6 +27,7 @@ cards:
       entity: sensor.white_temp_1_humidity
     - type: sensor
       entity: sensor.white_temp_1_pressure
+      name: Lufttryck
   - type: custom:mini-media-player
     entity: media_player.gastrum
     name: Sonosen

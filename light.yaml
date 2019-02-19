@@ -97,7 +97,7 @@
   entity_id: switch.sangkontakt
 - platform: switch
   name: Balkongen
-  entity_id: switch.nexa_sovrum_3    
+  entity_id: switch.balcony
 
 - platform: mqtt
   schema: json

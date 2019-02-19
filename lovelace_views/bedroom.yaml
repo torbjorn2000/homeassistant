@@ -18,12 +18,13 @@ cards:
     cards:
     - type: sensor
       name: Temp
-      entity: sensor.white_temp_2_temp
+      entity: sensor.white_temp_2_temperature
     - type: sensor
       name: Fukt
       entity: sensor.white_temp_2_humidity
     - type: sensor
       entity: sensor.white_temp_2_pressure
+      name: Lufttryck
   - type: custom:mini-media-player
     entity: media_player.sovrum
     name: Sonosen
