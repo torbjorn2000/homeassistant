@@ -45,6 +45,13 @@ cards:
       - entity: zwave.soft_green
       - entity: zwave.perry_berry
   - type: entities
+    title: Rörelsesensorn
+    show_header_toggle: false
+    entities:
+      - entity: binary_sensor.white_motion_occupancy
+      - entity: sensor.white_motion_illuminance
+      - entity: sensor.white_motion_battery
+  - type: entities
     title: Zigbee
     show_header_toggle: false
     entities:

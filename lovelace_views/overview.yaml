@@ -172,7 +172,7 @@ cards:
     cards:
     - type: glance
       entities:
-        - entity: sensor.bedroom_temperature
+        - entity: sensor.white_temp_2_temperature
           name: Sovrum
         - entity: sensor.kitchen_temperature
           name: Kök
