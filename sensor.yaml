@@ -176,27 +176,6 @@
   icon: mdi:battery-70
   value_template: "{{ value_json.battery }}"
   unit_of_measurement: '%'  
-
-- platform: mqtt
-  name: Bedroom temperature
-  state_topic: "homeassistant/sensor/bedroom_thermometer"
-  icon: mdi:thermometer
-  value_template: "{{ value_json.temperature }}"
-  unit_of_measurement: '°C'
-
-- platform: mqtt
-  name: Bedroom humidity
-  state_topic: "homeassistant/sensor/bedroom_thermometer"
-  icon: mdi:water
-  value_template: "{{ value_json.humidity }}"
-  unit_of_measurement: '%'
-
-- platform: mqtt
-  name: Bedroom thermometer battery
-  state_topic: "homeassistant/sensor/bedroom_thermometer"
-  icon: mdi:battery-70
-  value_template: "{{ value_json.battery }}"
-  unit_of_measurement: '%'  
         
 - platform: systemmonitor
   resources:

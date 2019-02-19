@@ -18,11 +18,12 @@ cards:
     cards:
     - type: sensor
       name: Temp
-      entity: sensor.bedroom_temperature
+      entity: sensor.white_temp_2_temp
     - type: sensor
       name: Fukt
-      icon: mdi:water
-      entity: sensor.bedroom_humidity
+      entity: sensor.white_temp_2_humidity
+    - type: sensor
+      entity: sensor.white_temp_2_pressure
   - type: custom:mini-media-player
     entity: media_player.sovrum
     name: Sonosen
