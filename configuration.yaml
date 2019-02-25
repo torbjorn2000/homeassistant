@@ -75,6 +75,8 @@ panel_custom:
 # Enables configuration UI
 config:
 
+person:
+
 system_health:
 
 http:
