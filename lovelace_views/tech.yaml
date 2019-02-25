@@ -51,6 +51,10 @@ cards:
       - entity: binary_sensor.white_motion_occupancy
       - entity: sensor.white_motion_illuminance
       - entity: sensor.white_motion_battery
+  - type: sensor
+    entity: sensor.white_motion_illuminance
+    name: Ljus
+    detail: 2
   - type: entities
     title: Zigbee
     show_header_toggle: false

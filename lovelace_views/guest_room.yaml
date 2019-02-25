@@ -20,14 +20,16 @@ cards:
   - type: horizontal-stack
     cards:
     - type: sensor
-      name: Temp
       entity: sensor.white_temp_1_temp
+      name: Temp
+      detail: 2  
     - type: sensor
-      name: Fukt
       entity: sensor.white_temp_1_humidity
-    - type: sensor
-      entity: sensor.white_temp_1_pressure
-      name: Lufttryck
+      name: Fukt
+      detail: 2  
+  - type: sensor
+    entity: sensor.white_temp_1_pressure
+    name: Lufttryck
   - type: custom:mini-media-player
     entity: media_player.gastrum
     name: Sonosen
