@@ -15,16 +15,16 @@ cards:
       - entity: sensor.disk_use_percent
         name: Disk
         secondary_info: last-changed
-  - type: entities
-    title: Internet speed
-    show_header_toggle: false
-    entities:
-      - entity: sensor.speedtest_ping
-        secondary_info: last-changed
-      - entity: sensor.speedtest_download
-        secondary_info: last-changed
-      - entity: sensor.speedtest_upload
-        secondary_info: last-changed
+#  - type: entities
+#    title: Internet speed
+#    show_header_toggle: false
+#    entities:
+#      - entity: sensor.speedtest_ping
+#        secondary_info: last-changed
+#      - entity: sensor.speedtest_download
+#        secondary_info: last-changed
+#      - entity: sensor.speedtest_upload
+#        secondary_info: last-changed
   - type: entities
     title: Z-wave
     show_header_toggle: false
