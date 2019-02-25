@@ -114,13 +114,15 @@ history:
 
 # View all events in a logbook
 logbook:
-   exclude:
+  exclude:
     domains:
       - sensor
       - switch
+    entities:
+      - binary_sensor.white_motion_occupancy
 
 logger:
-  default: debug
+  default: info
   logs:
     homeassistant.components.discovery: error
     homeassistant.components.http.view: error

@@ -15,6 +15,10 @@ cards:
       - entity: sensor.disk_use_percent
         name: Disk
         secondary_info: last-changed
+      - entity:  sensor.hallon_db_size
+        name: Database (on Lingon)
+        secondary_info: last-changed
+
 #  - type: entities
 #    title: Internet speed
 #    show_header_toggle: false

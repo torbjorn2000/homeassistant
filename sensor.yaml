@@ -74,54 +74,15 @@
       entity_id:
         - zwave.soft_green
       value_template: "{{ states.zwave.soft_green.attributes['battery_level']}}"
- #   white_button_1_battery:
- #     unit_of_measurement: '%'
- #     entity_id:
- #       - sensor.white_button_1
- #     value_template: "{{ states.sensor.white_button_1.attributes['battery']}}"
- #   white_button_1_linkquality:
- #     #unit_of_measurement: '%'
- #     entity_id:
- #       - sensor.white_button_1
- #     value_template: "{{ states.sensor.white_button_1.attributes['linkquality']}}"
- #   white_button_2_battery:
- #     unit_of_measurement: '%'
- #     entity_id:
- #       - sensor.white_button_2
- #     value_template: "{{ states.sensor.white_button_2.attributes['battery']}}"
- #   white_button_2_linkquality:
- #     #unit_of_measurement: '%'
- #     entity_id:
- #       - sensor.white_button_2
- #     value_template: "{{ states.sensor.white_button_2.attributes['linkquality']}}"
- #   white_button_3_battery:
- #     unit_of_measurement: '%'
- #     entity_id:
- #       - sensor.white_button_3
- #     value_template: "{{ states.sensor.white_button_3.attributes['battery']}}"
- #   white_button_3_linkquality:
- #     #unit_of_measurement: '%'
- #     entity_id:
- #       - sensor.white_button_3
- #     value_template: "{{ states.sensor.white_button_3.attributes['linkquality']}}"
- #   white_temp_1_battery:
- #     unit_of_measurement: '%'
- #     entity_id:
- #       - sensor.white_temp_1_temp
- #     value_template: "{{ states.sensor.white_temp_1_temp.attributes['battery']}}"
- #   white_temp_1_linkquality:
- #     #unit_of_measurement: '%'
- #     entity_id:
- #       - sensor.white_temp_1_temp
- #     value_template: "{{ states.sensor.white_temp_1_temp.attributes['linkquality']}}"
-#    weather_aggregation:
-#      friendly_name: "Väder"
-#      value_template: "{{ states.sensor.yr_temperature.state }}"
-#      entity_picture_template: "{{ states.sensor.yr_symbol.attributes['entity_picture']}}"
-#      unit_of_measurement: '°C'
-#      entity_id:
-#        - sensor.yr_temperature
-#        - sensor.yr_symbol
+
+- platform: sql             
+  db_url: mysql://hallon:rh5ny6@192.168.0.23/hallon
+  icon: mdi:database
+  queries:
+   - name: Hallon DB size
+     query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / 1048576, 2) "value" FROM information_schema.tables WHERE table_schema="hallon" GROUP BY table_schema;'
+     column: 'value'
+     unit_of_measurement: MB
 
 - platform: mqtt
   name: Bridge state
