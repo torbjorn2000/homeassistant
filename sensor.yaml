@@ -77,7 +77,6 @@
 
 - platform: sql             
   db_url: mysql://hallon:rh5ny6@192.168.0.23/hallon
-  icon: mdi:database
   queries:
    - name: Hallon DB size
      query: 'SELECT table_schema "database", Round(Sum(data_length + index_length) / 1048576, 2) "value" FROM information_schema.tables WHERE table_schema="hallon" GROUP BY table_schema;'

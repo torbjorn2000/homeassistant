@@ -17,6 +17,7 @@ cards:
         secondary_info: last-changed
       - entity:  sensor.hallon_db_size
         name: Database (on Lingon)
+        icon: mdi:database
         secondary_info: last-changed
 
 #  - type: entities
