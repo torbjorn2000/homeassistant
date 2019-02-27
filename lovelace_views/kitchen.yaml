@@ -38,7 +38,7 @@ cards:
     - type: sensor
       name: Balkongen
       icon: mdi:weather-sunny
-      entity: sensor.garden_temperatur
+      entity: sensor.garden_temperature
   - type: custom:mini-media-player
     entity: media_player.kok
     name: Sonosen

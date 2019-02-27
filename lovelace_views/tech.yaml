@@ -84,9 +84,9 @@ cards:
       - entity: sensor.white_temp_2_battery
         name: Termometer sovrum
         icon: mdi:battery-70
-      - entity: sensor.kitchen_thermometer_battery
+      - entity: sensor.kitchen_battery
         name: Termometer kök
-      - entity: sensor.living_room_thermometer_battery
+      - entity: sensor.living_room_battery
         name: Termometer vardagsrum
       - entity: sensor.perryberry_battery
         icon: mdi:battery-70
