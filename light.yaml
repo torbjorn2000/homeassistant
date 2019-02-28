@@ -54,9 +54,10 @@
   name: Sovrum
   entities:
      - light.bedroom_ikea
+     - light.bedroom_zb
 #    - light.turbanen
 #    - light.sanglamporna
-     - light.bedroom_mirror
+#     - light.bedroom_mirror
 - platform: group
   name: Flowers
   entities:
@@ -91,7 +92,7 @@
   entity_id: switch.fonsteruttaget
 - platform: switch
   name: Turbanen
-  entity_id: switch.turbankontakt
+  entity_id: switch.turban
 - platform: switch
   name: Sänglamporna
   entity_id: switch.sangkontakt
@@ -120,6 +121,14 @@
   name: Kitchen ZB
   command_topic: "zigbee2mqtt/kitchen/set"
   state_topic: "zigbee2mqtt/kitchen/set"
+  color_temp: false
+  brightness: true
+  rgb: false
+- platform: mqtt
+  schema: json
+  name: Bedroom ZB
+  command_topic: "zigbee2mqtt/bedroom/set"
+  state_topic: "zigbee2mqtt/bedroom/set"
   color_temp: false
   brightness: true
   rgb: false
