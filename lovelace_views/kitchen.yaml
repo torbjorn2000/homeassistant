@@ -23,10 +23,12 @@ cards:
         icon: mdi:flower-tulip
         entity: light.koksblomman
         name: Hängblomman
+        toggle: true
       - type: divider
       - type: custom:slider-entity-row
         icon: mdi:human-child
         entity: light.butler_lamp
+        toggle: true
   - type: horizontal-stack
     cards:
     - type: sensor
