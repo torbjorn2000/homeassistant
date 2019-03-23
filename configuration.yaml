@@ -79,9 +79,6 @@ person:
 
 system_health:
 
-http:
-  api_password: !secret http_password
-
 discovery:
   ignore:
     - apple_tv
@@ -192,7 +189,6 @@ homekit:
       - light.hall
       - light.sovrum
       - light.flowers
-      - light.balkongen
       - light.cozy_dozy
       - light.cozy_dozy_zb
       - light.living_room_zb

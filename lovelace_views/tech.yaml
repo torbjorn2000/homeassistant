@@ -16,7 +16,11 @@ cards:
         name: Disk
         secondary_info: last-changed
       - entity:  sensor.hallon_db_size
-        name: Database (on Lingon)
+        name: Database (Hallon)
+        icon: mdi:database
+        secondary_info: last-changed
+      - entity:  sensor.lingon_db_size
+        name: Database (Lingon)
         icon: mdi:database
         secondary_info: last-changed
 
