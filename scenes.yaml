@@ -45,8 +45,8 @@
     light.fibaro_wall_dimmer_vardagsrum_taklampa: off
     input_boolean.myslampor_vardagsrum : off
     input_boolean.cozy_dozy: off
-    input_booelan.pers_morning: off
-    input_booelan.cleaning: off
+    input_boolean.pers_morning: off
+    input_boolean.cleaning: off
 
 - name: Per's morning
   entities:
@@ -63,7 +63,7 @@
     light.kok: on
     input_boolean.cozy_dozy: on
     input_boolean.myslampor_vardagsrum : on
-    input_booelan.pers_morning: on
+    input_boolean.pers_morning: on
 
 - name: Cleaning
   entities:
@@ -75,7 +75,7 @@
       brightness_pct: 100
     input_boolean.myslampor_vardagsrum : on
     input_boolean.cozy_dozy: on
-    input_booelan.cleaning: on
+    input_boolean.cleaning: on
 
 - name: Movie mode
   entities:

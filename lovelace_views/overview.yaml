@@ -180,6 +180,14 @@ cards:
           name: Vardagsrum
         - entity: sensor.white_temp_1_temp
           name: Gästrum
+    - type: entities
+      title: Automationer
+      show_header_toggle: false
+      entities:
+      - entity: automation.cozy_dozy_by_motion
+        name: Cozy dozy triggad av rörelse
+      - entity: timer.cozy_dozy_by_motion
+        name: Pausad i sekunder...
     - type: weather-forecast
       name: SMHI
       entity: weather.smhi_home

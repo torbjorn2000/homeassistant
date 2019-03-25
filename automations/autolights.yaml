@@ -1,0 +1,40 @@
+- alias: Cozy dozy by motion
+  initial_state: on
+  trigger:
+    platform: state
+    entity_id: binary_sensor.white_motion_occupancy
+    to: 'on'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: input_boolean.cozy_dozy
+        state: 'off'
+      - condition: state
+        entity_id: timer.cozy_dozy_by_motion
+        state: 'idle'
+      - condition: state
+        entity_id: binary_sensor.workday_sensor
+        state: 'on'
+      - condition: numeric_state
+        entity_id: sun.sun
+        value_template: "{{ state.attributes.elevation}}"
+        below: 10
+      - condition: or
+        conditions:
+        - condition: time
+          after: '06:50:00'
+          before: '09:00:00'
+        - condition: time
+          after: '16:00:00'
+          before: '19:00:00'
+          #before: '22:00:00'
+  action:
+    - service: homeassistant.turn_on
+      entity_id: script.cozy_dozy
+    - service: timer.start
+      data:
+        entity_id: timer.cozy_dozy_by_motion
+        duration: 14400 # 4h
+        #duration: 120 #2 min
+        

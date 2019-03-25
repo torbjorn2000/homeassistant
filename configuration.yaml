@@ -12,6 +12,8 @@ homeassistant:
   time_zone: Europe/Stockholm
 #  customize: !include customize.yaml
 
+sun:
+
 zone:
   - name: Home
     latitude: !secret home_lat
@@ -136,16 +138,6 @@ logger:
     coap: info
     pytradfri.api.aiocoap_api: info
 
-#binary_sensor:
-#  platform: rfxtrx
-#  devices:
-#    082003052f15000670:
-#      name: Brand
-#      fire_event: true 
-#      device_class: smoke
-#      off_delay:
-#        minutes: 5
-      
 media_player:
   - platform: sonos
   - platform: samsungtv
@@ -223,6 +215,8 @@ timer:
   zigbee_permit_join:
     name: Time remaining
     duration: 600 # Updated this to the number of seconds you wish
+  cozy_dozy_by_motion:
+    name: Cozy dozy by motion disabled remaining
 
 input_select:
   zigbee2mqtt_log_level:
@@ -235,4 +229,7 @@ input_select:
     initial: info
     icon: mdi:format-list-bulleted
 
+binary_sensor:
+  - platform: workday
+    country: SE
 
