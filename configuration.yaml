@@ -217,6 +217,8 @@ timer:
     duration: 600 # Updated this to the number of seconds you wish
   cozy_dozy_by_motion:
     name: Cozy dozy by motion disabled remaining
+  pers_morning_by_motion:
+    name: Per's morning by motion disabled remaining  
 
 input_select:
   zigbee2mqtt_log_level:

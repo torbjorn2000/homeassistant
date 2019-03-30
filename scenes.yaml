@@ -13,9 +13,6 @@
       state: on
       brightness_pct: 60
       color_temp: 370
-    light.hanglamporna:
-      state: on
-      brightness_pct: 60
     light.kitchen_ceiling:
       state: on
       brightness_pct: 30
@@ -25,7 +22,7 @@
       brightness_pct: 50
     light.guest_ball:
       state: on
-      brightness_pct: 30
+      brightness_pct: 20
       color_temp: 370
     light.bedroom_mirror:
       state: on
@@ -59,7 +56,7 @@
       brightness_pct: 10
     light.gastrum: on
     light.hall: on
-    light.balkongen: on 
+#    light.balkongen: on 
     light.kok: on
     input_boolean.cozy_dozy: on
     input_boolean.myslampor_vardagsrum : on

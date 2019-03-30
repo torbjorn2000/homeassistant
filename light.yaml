@@ -95,9 +95,9 @@
 - platform: switch
   name: Sänglamporna
   entity_id: switch.bed
-- platform: switch
-  name: Balkongen
-  entity_id: switch.balcony
+#- platform: switch
+#  name: Balkongen
+#  entity_id: switch.balcony
 
 - platform: mqtt
   schema: json
