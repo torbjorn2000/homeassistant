@@ -6,6 +6,7 @@
       brightness_pct: 10
     input_boolean.myslampor_vardagsrum : on
     input_boolean.cozy_dozy: on
+    input_boolean.pers_morning: on
 
 - name: Set dim level
   entities:
@@ -58,7 +59,6 @@
     light.hall: on
 #    light.balkongen: on 
     light.kok: on
-    input_boolean.cozy_dozy: on
     input_boolean.myslampor_vardagsrum : on
     input_boolean.pers_morning: on
 

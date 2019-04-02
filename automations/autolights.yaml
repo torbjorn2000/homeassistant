@@ -13,15 +13,21 @@
       - condition: state
         entity_id: timer.cozy_dozy_by_motion
         state: 'idle'
-      - condition: numeric_state
-        entity_id: sun.sun
-        value_template: "{{ state.attributes.elevation}}"
-        below: 9
+      - condition: or
+        conditions:
+        - condition: numeric_state
+          entity_id: sun.sun
+          value_template: "{{ state.attributes.elevation}}"
+          below: 9
+        - condition: numeric_state
+          entity_id: sensor.white_motion_illuminance
+          value_template: "{{ state.attributes.illuminance}}"
+          below: 10
       - condition: or
         conditions:
         - condition: time
           after: '16:00:00'
-          before: '19:00:00'
+          before: '21:00:00'
         - condition: and
           conditions:
           - condition: state
@@ -49,15 +55,21 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: input_boolean.cozy_dozy
+        entity_id: input_boolean.pers_morning
         state: 'off'
       - condition: state
         entity_id: timer.pers_morning_by_motion
         state: 'idle'
-      - condition: numeric_state
-        entity_id: sun.sun
-        value_template: "{{ state.attributes.elevation}}"
-        below: 9
+      - condition: or
+        conditions:
+        - condition: numeric_state
+          entity_id: sun.sun
+          value_template: "{{ state.attributes.elevation}}"
+          below: 9
+        - condition: numeric_state
+          entity_id: sensor.white_motion_illuminance
+          value_template: "{{ state.attributes.illuminance}}"
+          below: 10
       - condition: time
         after: '05:00:00'
         before: '07:00:00'
