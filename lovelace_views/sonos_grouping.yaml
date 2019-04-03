@@ -1,8 +1,10 @@
-- entity_id: media_player.vardagsrum
-  name: Vardagsrum
-- entity_id: media_player.kok
-  name: Kök
-- entity_id: media_player.gastrum
-  name: Gästrum
-- entity_id: media_player.sovrum
-  name: Sovrum
+show_group_count: true
+entities:
+  - entity_id: media_player.vardagsrum
+    name: Vardagsrum
+  - entity_id: media_player.kok
+    name: Kök
+  - entity_id: media_player.gastrum
+    name: Gästrum
+  - entity_id: media_player.sovrum
+    name: Sovrum

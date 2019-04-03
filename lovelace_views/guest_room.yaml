@@ -17,7 +17,6 @@ cards:
         entity: light.guest_side_board
         name: Skänken
         toggle: true
-      - entity: media_player.gastrum
   - type: horizontal-stack
     cards:
     - type: sensor
@@ -38,9 +37,8 @@ cards:
     entity: media_player.gastrum
     name: Sonosen
     icon: mdi:speaker-wireless
-    hide_power: true
-    show_source: true
-    short_info: true
-    consider_pause_idle: true
-    idle_view: true
-    sonos_grouping: !include sonos_grouping.yaml
+    hide:
+      power: true
+    idle_view:
+      when_paused: true
+    sonos: !include sonos_grouping.yaml

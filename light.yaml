@@ -2,23 +2,21 @@
   name: Cozy dozy
   entities:
     - light.cozy_dozy_zb
-    - light.hanglamporna
     - light.tv_banken
     - light.guest_room_ikea
     - light.kitchen_ikea
     - light.koksbanken
     - light.hallbyran
-    - light.bedroom_ikea
 - platform: group
   name: Vardagsrum mys
   entities:
-    - light.living_room_zb
-#    - light.crayfish_lamp
-#    - light.garbage_lamp
-#    - light.living_room_flower
-#    - light.base_lamp
-#    - light.living_room_window
-#    - light.plexi_lamp
+#    - light.living_room_zb
+    - light.crayfish_lamp
+    - light.garbage_lamp
+    - light.living_room_flower
+    - light.base_lamp
+    - light.living_room_window
+    - light.plexi_lamp
     - light.hanglamporna
     - light.tv_banken
 - platform: group
@@ -29,13 +27,13 @@
 - platform: group
   name: Gästrum
   entities:
-    - light.guest_room_zb
-    - light.guest_room_ikea
-#    - light.guest_ball
-#    - light.gastbokhyllan
-#    - light.gastsoffan
-#    - light.guest_side_board
-#    - light.guest_window 
+#    - light.guest_room_zb
+#    - light.guest_room_ikea
+     - light.guest_ball
+     - light.gastbokhyllan
+     - light.gastsoffan
+     - light.guest_side_board
+     - light.guest_window 
 - platform: group
   name: Kök
   entities:
@@ -53,10 +51,10 @@
 - platform: group
   name: Sovrum
   entities:
-     - light.bedroom_zb
-#    - light.turbanen
-#    - light.sanglamporna
-#     - light.bedroom_mirror
+#   - light.bedroom_zb
+    - light.turbanen
+    - light.sanglamporna
+    - light.bedroom_mirror
 - platform: group
   name: Flowers
   entities:

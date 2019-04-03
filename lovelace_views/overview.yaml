@@ -9,11 +9,6 @@ cards:
         - type: "custom:button-card"
           icon: mdi:heart
           name: Myslampor
-          #color: red
-          #size: 100%
-          style:
-            - text-transform: none
-            - font-weight: bold
           action: service
           service:
             domain: script
@@ -23,10 +18,6 @@ cards:
         - type: "custom:button-card"
           icon: mdi:power-sleep
           name: Släckt
-        #  size: 100%
-          style:
-            - text-transform: none
-            - font-weight: bold
           action: service
           service:
             domain: scene
@@ -38,36 +29,24 @@ cards:
         - type: "custom:button-card"
           icon: mdi:coffee
           name: Pers morgon
-          #size: 100%
-          style:
-            - text-transform: none
-            - font-weight: bold
           action: service
           service:
             domain: scene
             action: turn_on
             data:
               entity_id: scene.per_s_morning
-        - type: "custom:button-card"
-          icon: mdi:broom
-          name: Städ
-        #  size: 100%
-          style:
-            - text-transform: none
-            - font-weight: bold
-          action: service
-          service:
-            domain: scene
-            action: turn_on
-            data:
-              entity_id: scene.cleaning
+#        - type: "custom:button-card"
+#          icon: mdi:broom
+#          name: Städ
+#          action: service
+#          service:
+#            domain: scene
+#            action: turn_on
+#            data:
+#              entity_id: scene.cleaning
         - type: "custom:button-card"
           icon: mdi:door
           name: Hej då
-          #size: 100%
-          style:
-            - text-transform: none
-            - font-weight: bold
           action: service
           service:
             domain: script
@@ -81,17 +60,11 @@ cards:
         name: Gästrum
         entity: light.gastrum
         color: rgb(255, 255, 0)
-        style:
-          - text-transform: none
-          - font-weight: bold
       - type: "custom:button-card"
         icon: mdi:sofa
         name: Vardagsrum
         entity: light.vardagsrum
         color: rgb(255, 255, 0)
-        style:
-          - text-transform: none
-          - font-weight: bold
     - type: horizontal-stack
       cards:
       - type: "custom:button-card"
@@ -99,17 +72,11 @@ cards:
         name: Kök
         entity: light.kok
         color: rgb(255, 255, 0)
-        style:
-          - text-transform: none
-          - font-weight: bold
       - type: "custom:button-card"
         icon: mdi:hotel
         name: Sovrum
         entity: light.sovrum
         color: rgb(255, 255, 0)
-        style:
-          - text-transform: none
-          - font-weight: bold
     - type: horizontal-stack
       cards:
       - type: "custom:button-card"
@@ -117,57 +84,43 @@ cards:
         name: Hall
         entity: light.hall
         color: rgb(255, 255, 0)
-        style:
-          - text-transform: none
-          - font-weight: bold
       - type: "custom:button-card"
         icon: mdi:flower-tulip
         name: Blomlampor
         entity: light.flowers
         color: rgb(255, 255, 0)
-        style:
-          - text-transform: none
-          - font-weight: bold
   - type: entities
     title: Sonosar
     show_header_toggle: false
     entities:
     - type: custom:mini-media-player
       entity: media_player.kok
-      hide_power: true
-      show_source: true
-      short_info: true
-      group: true
-      consider_pause_idle: true
-      idle_view: true
-      sonos_grouping: !include sonos_grouping.yaml
+      hide:
+        power: true
+      idle_view:
+        when_paused: true
+      sonos: !include sonos_grouping.yaml
     - type: custom:mini-media-player
       entity: media_player.vardagsrum
-      hide_power: true
-      show_source: true
-      short_info: true
-      group: true
-      consider_pause_idle: true
-      idle_view: true
-      sonos_grouping: !include sonos_grouping.yaml
+      hide:
+        power: true
+      idle_view:
+        when_paused: true
+      sonos: !include sonos_grouping.yaml
     - type: custom:mini-media-player
       entity: media_player.gastrum
-      hide_power: true
-      show_source: true
-      short_info: true
-      group: true
-      consider_pause_idle: true
-      idle_view: true
-      sonos_grouping: !include sonos_grouping.yaml
+      hide:
+        power: true
+      idle_view:
+        when_paused: true
+      sonos: !include sonos_grouping.yaml
     - type: custom:mini-media-player
       entity: media_player.sovrum
-      hide_power: true
-      show_source: true
-      short_info: true
-      group: true
-      consider_pause_idle: true
-      idle_view: true
-      sonos_grouping: !include sonos_grouping.yaml
+      hide:
+        power: true
+      idle_view:
+        when_paused: true
+      sonos: !include sonos_grouping.yaml
   - type: vertical-stack
     cards:
     - type: glance
@@ -186,12 +139,12 @@ cards:
       entities:
       - entity: automation.cozy_dozy_by_motion
         name: Cozy dozy triggad av rörelse
-      - entity: timer.cozy_dozy_by_motion
-        name: Pausad i sekunder...
+#      - entity: timer.cozy_dozy_by_motion
+#        name: Pausad i sekunder...
       - entity: automation.per_s_morning_by_motion
         name: Pers morgon triggad av rörelse
-      - entity: timer.pers_morning_by_motion
-        name: Pausad i sekunder...
+#      - entity: timer.pers_morning_by_motion
+#        name: Pausad i sekunder...
     - type: weather-forecast
       name: SMHI
       entity: weather.smhi_home
