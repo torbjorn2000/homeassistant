@@ -98,7 +98,7 @@ mqtt:
     payload: 'offline'
 
 zwave:
-  usb_path: /dev/ttyACM0
+  usb_path: /dev/ttyACM1
 
 tradfri:
   host: 192.168.0.39
