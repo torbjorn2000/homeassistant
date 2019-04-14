@@ -65,10 +65,10 @@
 # entity_id: switch.nexa_remote_31
 - platform: switch
   name: Kitchen sling
-  entity_id: switch.slingan
+  entity_id: switch.kitchen_sling
 - platform: switch
   name: Kitchen window
-  entity_id: switch.ugglan
+  entity_id: switch.kitchen_owl
 - platform: switch
   name: Hallbyrån
   entity_id: switch.telldus_plugin_switch_1
@@ -80,13 +80,13 @@
   entity_id: switch.hanging_lamps
 - platform: switch
   name: Gästbokhyllan
-  entity_id: switch.bokuttaget
+  entity_id: switch.guest_bookshelf
 - platform: switch
   name: Gästsoffan
-  entity_id: switch.soffuttaget
+  entity_id: switch.guest_sofa
 - platform: switch
   name: Guest window
-  entity_id: switch.fonsteruttaget
+  entity_id: switch.guest_window
 - platform: switch
   name: Turbanen
   entity_id: switch.turban
