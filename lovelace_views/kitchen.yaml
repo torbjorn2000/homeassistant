@@ -9,7 +9,7 @@ cards:
         name: Taklampa
         icon: mdi:ceiling-light
         toggle: true
-      - entity: light.koksbanken
+      - entity: light.kitchen_sink
         type: custom:slider-entity-row
         icon: mdi:water-pump
         toggle: true
