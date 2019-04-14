@@ -37,13 +37,12 @@
 - platform: group
   name: Kök
   entities:
-    - light.kitchen_zb
-    - light.kitchen_ikea
-    - light.koksbanken
-#    - light.kitchen_sling
-#    - light.kitchen_window
-#    - light.butler_lamp
-#    - light.kitchen_ceiling
+    #- light.kitchen_zb
+    - light.kitchen_sink
+    - light.kitchen_sling
+    - light.kitchen_window
+    - light.butler_lamp
+    - light.kitchen_ceiling
 - platform: group
   name: Hall
   entities:

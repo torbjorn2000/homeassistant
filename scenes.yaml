@@ -18,7 +18,7 @@
       state: on
       brightness_pct: 30
       color_temp: 370
-    light.koksbanken:
+    light.kitchen_sink:
       state: on
       brightness_pct: 50
     light.guest_ball:
