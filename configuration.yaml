@@ -100,9 +100,9 @@ mqtt:
 zwave:
   usb_path: /dev/ttyACM1
 
-tradfri:
-  host: 192.168.0.39
-  allow_tradfri_groups: true
+#tradfri:
+#  host: 192.168.0.39
+#  allow_tradfri_groups: true
 
 recorder:
   purge_keep_days: 7

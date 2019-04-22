@@ -96,7 +96,7 @@ cards:
         icon: mdi:battery-70
       - entity: sensor.softgreen_battery
         icon: mdi:battery-70
-      - entity: sensor.vita_dimmern
+      - entity: sensor.dimmer_yellow_battery
         icon: mdi:battery-70
         name: Trådfri vita (Köksbänk)
       - entity: sensor.dimmer_yellow_battery

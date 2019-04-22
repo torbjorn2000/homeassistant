@@ -3,9 +3,6 @@
   entities:
     - light.cozy_dozy_zb
     - light.tv_banken
-    - light.guest_room_ikea
-    - light.kitchen_ikea
-    - light.koksbanken
     - light.hallbyran
 - platform: group
   name: Vardagsrum mys
@@ -28,7 +25,6 @@
   name: Gästrum
   entities:
 #    - light.guest_room_zb
-#    - light.guest_room_ikea
      - light.guest_ball
      - light.gastbokhyllan
      - light.gastsoffan
