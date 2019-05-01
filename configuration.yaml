@@ -57,7 +57,7 @@ custom_updater:
 webhook:
  
 zigbee2mqtt_networkmap:
-  
+
 panel_custom:
   - name: zwavegraph2
     sidebar_title: ZWave Graph
@@ -137,8 +137,9 @@ media_player:
 
 # Text to speech
 tts:
-  - platform: google
-    language: 'sv'
+ - platform: google_translate
+   service_name: google_say
+   language: 'sv'
 
 notify:
   - name: pushbullet
