@@ -57,17 +57,7 @@ custom_updater:
 webhook:
  
 zigbee2mqtt_networkmap:
- 
-panel_iframe:
-  networkmap:
-    title: 'Zigbee Map'
-    url: '/local/zigbee2mqtt_networkmap/map.html?engine=circo '
-    icon: 'mdi:graphql'
-  nodered:
-    title: 'Node-RED'
-    icon: mdi:shuffle-variant
-    url: http://hallon.local:1880
-
+  
 panel_custom:
   - name: zwavegraph2
     sidebar_title: ZWave Graph
